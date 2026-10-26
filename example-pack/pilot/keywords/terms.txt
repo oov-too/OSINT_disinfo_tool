@@ -1,0 +1,39 @@
+# the corpus's system, bug and process vocabulary (pilot pack; the codebook's terms, flat)
+Horizon
+Legacy Horizon
+Horizon Online
+HNG-X
+HNG-A
+Riposte
+POLSAP
+Credence
+Branch Trading Statement
+Transaction Correction
+Transaction Acknowledgement
+settling centrally
+settling in branch
+roll over
+remming
+suspense account
+Local Suspense
+Receipts and Payments Mismatch
+Callendar Square
+Dalmellington
+Balancing Transaction
+APPSUP
+remote access
+ARQ
+PEAK
+KEL
+Known Error Log
+FAD code
+SPMR
+SPM
+subpostmaster
+sub-postmaster
+false accounting
+shortfall
+discrepancy
+Group Litigation Order
+Mediation Scheme
+Complaint Review and Mediation Scheme

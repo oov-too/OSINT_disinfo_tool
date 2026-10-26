@@ -1,0 +1,281 @@
+{
+ "_comment": "Answers for /setup against the bundle's sample database (sample/casebook.db, the invented cases of tools/example-casebook.md). Copy to setup/answers.json in a scratch project to see every stage run; tools/ledger/tests/test_setup.py uses this file. 2.source is set by whoever runs it.",
+ "answers": {
+  "0.continue_without": true,
+  "0.privacy_settings": true,
+  "0.administrator": "Sample Administrator",
+  "0.compile_vision": false,
+  "1.pack_name": "harrowmere",
+  "1.title": "Harrowmere casebook",
+  "1.question": "Was a written warning about the Harrowmere spillway given before the failure, and was it later managed out of the record?",
+  "1.referent": "the public of Ostley Vale",
+  "1.pirs": [
+   {
+    "question": "Who received the 2015 warning about the left wall, and what did they do with it?",
+    "eeis": [
+     "date",
+     "office",
+     "instrument"
+    ],
+    "terms": [
+     "Lisle",
+     "Harlowe",
+     "memo"
+    ]
+   },
+   {
+    "question": "Who set the timber levy's rate and on whose advice?",
+    "eeis": [
+     "date",
+     "office",
+     "instrument"
+    ],
+    "terms": [
+     "levy",
+     "League"
+    ]
+   }
+  ],
+  "1.slots": {},
+  "1.pack": {},
+  "2.name": "casebook",
+  "2.record_unit": "records",
+  "2.field_edits": {},
+  "2.promote": [
+   "keywords"
+  ],
+  "2.annotations.annotations": true,
+  "2.annotations.annotations.register": "claims",
+  "2.annotations.annotations.columns": {
+   "attributed_to": "attributed_to"
+  },
+  "2.text_order": "confirm",
+  "2.dry_run_ok": true,
+  "2.hold_now": true,
+  "2.slots": {},
+  "2.pack": {},
+  "3.subjects": [
+   "infrastructure-safety",
+   "public-accountability",
+   "money-and-contracts"
+  ],
+  "3.audited_subjects": [
+   "infrastructure-safety"
+  ],
+  "3.topics": [
+   {
+    "id": "design-and-construction",
+    "label": "Design and construction"
+   },
+   {
+    "id": "inspection-and-warnings",
+    "label": "Inspection and warnings"
+   },
+   {
+    "id": "decision-makers",
+    "label": "Decision makers"
+   },
+   {
+    "id": "money-and-contracts",
+    "label": "Money and contracts"
+   },
+   {
+    "id": "other",
+    "label": "Other"
+   }
+  ],
+  "3.eras": [
+   {
+    "id": "before-2009",
+    "from": -1000000000,
+    "to": 2008
+   },
+   {
+    "id": "2009-2016",
+    "from": 2009,
+    "to": 2016
+   },
+   {
+    "id": "2017-onward",
+    "from": 2017,
+    "to": 1000000000
+   }
+  ],
+  "3.basis_vocabulary": [
+   "legal advice",
+   "pending investigation",
+   "commercial confidence",
+   "protecting a named person",
+   "does not know"
+  ],
+  "3.channelled_clause": "none",
+  "3.compilers": [
+   "The Long Table"
+  ],
+  "3.adverse_rule": true,
+  "3.circles": [
+   {
+    "id": "engineering",
+    "label": "the engineering circle",
+    "members": [
+     "Calloway Ashdown Civil",
+     "Pernell Geotechnics",
+     "Petra Vanecek"
+    ]
+   },
+   {
+    "id": "authority",
+    "label": "the Authority's circle",
+    "members": [
+     "Desmond Harlowe",
+     "Gareth Lisle",
+     "Vale Water Authority"
+    ]
+   },
+   {
+    "id": "press",
+    "label": "the press circle",
+    "members": [
+     "Owen Thale",
+     "The Long Table",
+     "Margin Notes"
+    ]
+   }
+  ],
+  "3.circle.engineering.identification": "declared",
+  "3.circle.authority.identification": "named",
+  "3.circle.authority.adverse_named": [
+   "Margin Notes (Ivo Strand)"
+  ],
+  "3.circle.press.identification": "detected",
+  "3.circle.press.adverse_detected": [
+   "records/6"
+  ],
+  "3.quota": "one adverse source per circle per era",
+  "3.ratio": "report the ratio of compiler to adverse sources; no target",
+  "3.slots": {},
+  "3.pack": {},
+  "4.flags": [
+   "Greenhollow Trading",
+   "Vale Water Authority"
+  ],
+  "4.ledgered_speakers": [
+   "Petra Vanecek"
+  ],
+  "4.not_entities": [],
+  "4.reference_objects": [
+   {
+    "id": "c-14",
+    "name": "Core sample C-14",
+    "criteria": [
+     "core",
+     "labelled",
+     "dated",
+     "tested",
+     "chain-signed",
+     "missing"
+    ],
+    "record": "records/5"
+   }
+  ],
+  "4.stock_phrases": [
+   "lessons will be learned"
+  ],
+  "4.slots": {
+   "reference_objects.watch_name": "core sample watch",
+   "actor_register.findings_heading": "Parties and blocs"
+  },
+  "4.pack": {
+   "objects.register": "research/core-sample-register.md",
+   "objects.watch_name": "core sample watch",
+   "actors.findings_heading": "Parties and blocs"
+  },
+  "5.canon": [
+   {
+    "id": "charter-1888",
+    "title": "The Harrowmere Waterworks Charter (1888)",
+    "source": "canon/charter-1888.txt",
+    "unit": "clause",
+    "unit_pattern": "^Clause \\d+",
+    "witnesses": [
+     "the annotated 1932 edition"
+    ]
+   }
+  ],
+  "5.codebook": [
+   {
+    "code": "weather",
+    "kind": "argot",
+    "meaning": "an inspection visit",
+    "attested_in": "the contractor's internal e-mail",
+    "key": "none dated"
+   }
+  ],
+  "5.slots": {},
+  "5.pack": {},
+  "6.lenses": [
+   {
+    "id": "pellingham",
+    "title": "The Pellingham manual",
+    "source_kind": "text",
+    "source": "Pellingham Crisis-Communications Manual (2004)",
+    "stated_in": "a held copy, when the group holds one",
+    "techniques": [
+     {
+      "statement": "Make a pre-emptive partial concession so the larger point is never pressed.",
+      "locator": "chapter 3"
+     },
+     {
+      "statement": "Flood the record with true but irrelevant documents.",
+      "locator": "chapter 5"
+     }
+    ]
+   }
+  ],
+  "6.lens.pellingham.mapping": {},
+  "6.slots": {},
+  "6.pack": {},
+  "7.members": [
+   {
+    "name": "Sample Administrator",
+    "os_user": "sample-admin",
+    "roles": [
+     "administrator",
+     "project-manager",
+     "launcher"
+    ]
+   },
+   {
+    "name": "Sample Researcher",
+    "os_user": "sample-researcher",
+    "roles": [
+     "launcher"
+    ]
+   }
+  ],
+  "7.model_route": "bedrock",
+  "7.budget": {
+   "weekly": "200",
+   "per_run": "25",
+   "unit": "usd",
+   "notes": "measured by ledger measure usage"
+  },
+  "7.no_omission": true,
+  "7.catalysts": [
+   {
+    "date": "2017-10-09",
+    "name": "the Ostley Gazette story",
+    "what": "the Lisle memo first published"
+   }
+  ],
+  "7.threshold_catalyst": "the Ostley Gazette story",
+  "7.private_individuals": "Private individuals (people with no public role in the material) are named only as the source names them and only where the record needs the name; nothing is compiled about them across sources beyond what the material states; their contact details, addresses and identifiers are never copied into notes, registers or exports.",
+  "7.publish_artifacts": [],
+  "7.skeleton_forms": {},
+  "7.skeleton_grid": [],
+  "7.slots": {},
+  "7.pack": {},
+  "8.record": "records/2",
+  "8.purpose": "the first intake of setup: the inspector's memorandum, a short document, taken through the staged workflow to check the pack end to end"
+ }
+}

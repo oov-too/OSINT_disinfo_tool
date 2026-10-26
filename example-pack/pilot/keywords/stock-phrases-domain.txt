@@ -1,0 +1,10 @@
+# set expressions of this corpus, for the echo tool's stop-list (a shared phrase here is the litigation's vocabulary, not an echo)
+bugs, errors and defects
+robust system
+an extremely robust system
+the integrity of Horizon
+unexplained shortfalls
+unexplained discrepancies
+remote access
+the nation's most trusted brand
+the 21st century equivalent of maintaining that the Earth is flat

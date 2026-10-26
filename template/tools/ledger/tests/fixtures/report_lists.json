@@ -1,0 +1,38 @@
+{
+ "_about": "One good and one bad element for each list `ledger integrate` reads (tools/report_check.py check_lists). The shapes are those of archived intake reports (provenance in the phase 2 follow-up 5 hand-back); the values are rewritten from the casebook corpus (tools/example-casebook.md), so nothing real is named. `bad_says` is a fragment the check's message must carry.",
+ "register_new": {
+  "good": {"video": "videos/harrowmere-day-12.md", "timestamp": "0:41:10", "who": "the site engineer, firsthand", "object": "core sample C-14, a concrete cylinder labelled and dated", "match": "label, date, custody", "strength": "moderate"},
+  "bad": "| new | [Harrowmere day 12](../videos/harrowmere-day-12.md) | 0:41:10 | the site engineer | core sample C-14 | label, date | moderate |",
+  "bad_says": "register_new[0]: a str, not an object"
+ },
+ "register_updates": {
+  "good": {"entry": 7, "text": "| 7 | [Harrowmere day 12](../videos/harrowmere-day-12.md) | 0:41:10 | the site engineer | core sample C-14 | label, date, custody | strong |"},
+  "bad": {"entry": 7, "note": "the laboratory log of 2011 gives the custody chain; raise the strength"},
+  "bad_says": "register_updates[0]: `text` must be the whole revised row starting `| 7 |`"
+ },
+ "relations": {
+  "good": {"a": "the Authority", "b": "the inquiry", "kind": "source-of", "hierarchy": "", "when": "2018", "what": "the Authority's review handed to the inquiry as an exhibit", "source": "harrowmere-day-12 claims 4", "chain": "2: counsel <- the review (document)", "confidence": "medium"},
+  "bad": {"A": "the site engineer", "B": "the contractor", "kind": "employer", "hierarchy": "B above A", "when": "2009", "what": "employed on the spillway pour", "source": "harrowmere-day-12 claims 9", "chain": "1: the site engineer (firsthand)", "confidence": "high"},
+  "bad_says": "relations[0]: no `a` and `b` (lower case); A, B are not read"
+ },
+ "chain_leads": {
+  "good": {"lead": "Divergence: the site diary dates the pour to August 2009, the contractor's letter to September", "kind": "inference", "sources": "harrowmere-day-12 claims 3, 11", "settles": "the laboratory's intake log for C-14"},
+  "bad": {"lead": "Divergence: the site diary dates the pour to August 2009, the contractor's letter to September", "kind": "inference", "evidence": "claims 3, 11", "test": "the laboratory's intake log for C-14"},
+  "bad_says": "chain_leads[0]: no `settles` (every lead carries its test); `test` is not read"
+ },
+ "first_telling_rows": {
+  "good": {"cluster": "FU-3", "row": "[harrowmere-day-12 claims 5]", "date": "2011-04-02", "venue": "the laboratory's report"},
+  "bad": {"cluster": "FU-3", "row": "[harrowmere-day-12 claims 5]", "date": "2 April 2011", "venue": "the laboratory's report"},
+  "bad_says": "first_telling_rows[0]: date '2 April 2011' is not YYYY, YYYY-MM or YYYY-MM-DD"
+ },
+ "answered_questions": {
+  "good": {"note": "videos/harrowmere-day-12.md", "row": "3", "question": "Who signed C-14 out to the laboratory?", "status": "checked", "answer": "The site diary names the shift engineer", "answered_by": "note: [Lisle memo](../books/lisle-memo-2015.md)"},
+  "bad": {"note": "videos/harrowmere-day-12.md", "row": "open question 3", "question": "Who signed C-14 out to the laboratory?", "status": "checked", "answer": "The site diary names the shift engineer"},
+  "bad_says": "answered_questions[0]: no `row` number"
+ },
+ "actor_rows": {
+  "good": "| new | the contractor's night shift | six workers on the left wall | site engineer, harrowmere-day-12 claims 9 | 1: the site engineer (firsthand) | poured the wall | the contractor | none | medium |",
+  "bad": "| ? | the contractor's night shift | six workers on the left wall | site engineer, harrowmere-day-12 claims 9 | 1: the site engineer (firsthand) | poured the wall | the contractor | none | medium |",
+  "bad_says": "does not start with `new` or a number"
+ }
+}

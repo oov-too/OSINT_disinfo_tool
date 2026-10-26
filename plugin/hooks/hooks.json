@@ -1,0 +1,40 @@
+{
+  "description": "Ledger checks: the verbatim check and the database build (into a check copy) after a note or note part is written, and the report check when a ledger agent stops. Every check runs in Python and reports as advice or a request to fix; none undoes or fails a write.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/ledger_hook.py", "verbatim"],
+            "timeout": 120,
+            "statusMessage": "ledger: verbatim check"
+          },
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/ledger_hook.py", "dbbuild"],
+            "timeout": 600,
+            "statusMessage": "ledger: database build into the check copy"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "^ledger:(reader|writer|finisher|builder|attacker|reviser)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/ledger_hook.py", "report"],
+            "timeout": 120,
+            "statusMessage": "ledger: report check"
+          }
+        ]
+      }
+    ]
+  }
+}

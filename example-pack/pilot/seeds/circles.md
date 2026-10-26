@@ -1,0 +1,18 @@
+# Circles of the pilot pack, and the adverse sources per circle (confirmed by the owner, 2026-10-22)
+
+tools/intake-policy.md rule 3 (core): one dated adverse telling per circle per era. The circles are the clusters the held sources show (packs/pilot/registers/order-of-battle-seed.md); this list was confirmed by the owner on 2026-10-22 (setup stage 3) and binds the pilot's intakes, with the adverse-source rule on. The adverse-source rule never makes an adverse source more reliable, never scores who is right, and never lets a sceptic or an institution correct a witness: it guarantees that each circle's telling is read beside a telling against it.
+
+How adverse sources are identified, per circle (setup stage 3's three routes): **declared** at intake through the source kind `adverse`; **named in advance** here (the column below), proposed for confirmation; **detected by position** by the setup scan (a source whose claims rows contradict the circle's on the same topic), never applied without confirmation.
+
+| Circle | Members as the held sources name them | Era pages | Adverse tellings, named in advance (held ones marked) |
+|---|---|---|---|
+| The subpostmasters (JFSA, claimants, appellants) | Alan Bates, Jo Hamilton, Lee Castleton, Noel Thomas, Seema Misra, the 42 appellants, the claimants of the group litigation | 2000-2009 to 2024-onward | POL's tellings: the 2009 spokesman ("an extremely robust system"; held, Computer Weekly 2009); POL's Reply to Second Sight Part Two (held, POL00004432, 2015); Rod Ismay's 2010 report as Hamilton at [24] describes it; POL witnesses at the inquiry (Vennells, held) |
+| The Post Office executive and board | Paula Vennells, Alice Perkins, Mark Davies, Angela van den Bogerd, Jane MacLeod, Rodric Williams, Nick Read, Alwen Lyons | 2010-2014 to 2024-onward | the subpostmasters' tellings (Bates, held); Second Sight's reports (interim, held); Fujitsu's 2024 statements that POL was aware of remote access (held, The Register); the press (held) |
+| Fujitsu and its engineers (from ICL Pathway) | Gareth Jenkins, the SSC, Richard Roll (former), Paul Patterson | 2000-2009 to 2024-onward | POL's counsel on Jenkins (held, the Clarke advice, 2013); Roll's evidence as the Horizon Issues judgment gives it (held, canon); POL's tellings blaming the supplier |
+| POL's lawyers (prosecution and litigation) | Cartwright King (Simon Clarke), Womble Bond Dickinson (Andrew Parsons), POL's General Counsel | 2010-2014, 2015-2019 | the Court of Appeal on disclosure in the prosecutions (held, canon: Hamilton); the appellants' and claimants' lawyers (Freeths) |
+| The investigators | Second Sight (Ian Henderson, Ron Warmington) | 2010-2014, 2015-2019 | POL's Reply to Second Sight's Part Two (held, POL00004432, 2015) |
+| The government shareholder and ministers | the Shareholder Executive (later UKGI), BEIS and its predecessors, ministers | 2010-2014 to 2024-onward | the subpostmasters' and MPs' tellings of their dealings with ministers (Bates, held) |
+| The press and campaigners | Computer Weekly (Rebecca Thomson, 2009), The Register, BBC Panorama (named in the forum) | 2000-2009 to 2024-onward | POL's spokesmen and statements (held in the press pieces themselves); forum posters disputing the press framing (held, HN) |
+| The public forum | Hacker News commenters | 2024-onward | the court's and inquiry's records on the technical points the posters argue (canon, held) |
+
+Quota and ratio: the core default (one adverse telling per circle per era) until the owner rules otherwise. The pilot's ten sources carry one adverse source by class (POL00004432); the others are adverse to some circle by position, as the table shows.

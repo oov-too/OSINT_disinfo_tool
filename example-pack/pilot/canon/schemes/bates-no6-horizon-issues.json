@@ -1,0 +1,27 @@
+{
+ "id": "bates-no6-horizon-issues",
+ "title": "Bates and others v Post Office Ltd (No 6) \"Horizon Issues\" (Rev 1)",
+ "author": "Fraser J",
+ "date": "2019-12-16",
+ "citation": "[2019] EWHC 3408 (QB)",
+ "court": "High Court of Justice, Queen's Bench Division",
+ "exhibit": "RLIT0000005",
+ "marker": {
+  "plugin": "packs/pilot/canon/paragraphs.py",
+  "start_after": "^Mr Justice Fraser",
+  "gap": 3
+ },
+ "unit": "the numbered paragraph; address the paragraph number, cited as '<citation> at [n]'",
+ "scheme": {
+  "kind": "headings",
+  "levels": [
+   {
+    "name": "para",
+    "pattern": "^¶ (\\d+)$"
+   }
+  ],
+  "address": "{para}",
+  "keep_heading": false
+ },
+ "_comment": "Unit scheme of the pilot pack (packs/pilot/canon/texts.md). The paragraph starts are marked first by the marker plugin (a `¶ n` line before each paragraph of the in-order chain), then the core canon adapter's headings scheme cuts one unit per marker."
+}

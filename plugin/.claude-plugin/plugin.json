@@ -1,0 +1,8 @@
+{
+  "name": "ledger",
+  "displayName": "Ledger",
+  "version": "0.7.0",
+  "description": "A local OSINT ledger over a research group's own sources: setup from their database, staged intake into markdown notes with chain of custody and forthrightness audits, narratives and their attacks, reports against priority intelligence requirements, and a status page. Agents run on Opus at high effort; probes on Haiku. Every check runs in Python and never reads as a failed write.",
+  "author": { "name": "Ledger maintainers" },
+  "keywords": ["osint", "research", "provenance", "intake", "narratives", "local"]
+}

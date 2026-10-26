@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>/*__TITLE__*/</title>
+<!-- A local file (tools/platform-plan.md, phase 5): no external script, stylesheet or font; the font stacks fall back to the system faces. -->
+<style>
+/* Layout: a register. Fixed top bar with the five views; a left rail with the family tree; one reading column of tables and prose. Lane colour is the only categorical system; roles, flares and moves are chips. */
+:root{
+  --bg:#f2f4f7; --panel:#ffffff; --fg:#1b2330; --muted:#5d6878; --line:#d5dae3; --accent:#2b6b7c; --accent-ink:#ffffff; --warn:#a4541a; --warn-bg:#f7e6d6; --good:#2f7a4a; --good-bg:#dcefe2; --bad:#9c2f2f; --bad-bg:#f5dede; --chip:#e8ecf2;
+  --lA:#3b6fb6; --lB:#1f8f8f; --lC:#7a4fb5; --lD:#b24b8a; --lE:#b58a1f; --lF:#8a3f2a; --lG:#6b6b6b; --lH:#2f7a4a;
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif; --mono:"JetBrains Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#13171e; --panel:#1b2029; --fg:#e4e8ef; --muted:#9aa5b5; --line:#2c3440; --accent:#7cbdcd; --accent-ink:#0f1a1e; --warn:#e3a06a; --warn-bg:#3a2a1c; --good:#7fcf98; --good-bg:#1d3326; --bad:#ec8c8c; --bad-bg:#3d2020; --chip:#262d39; --lA:#7ea6e0; --lB:#5fc2c2; --lC:#b495e3; --lD:#df8fc0; --lE:#dcb860; --lF:#d08a76; --lG:#a5a5a5; --lH:#7fcf98; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#13171e; --panel:#1b2029; --fg:#e4e8ef; --muted:#9aa5b5; --line:#2c3440; --accent:#7cbdcd; --accent-ink:#0f1a1e; --warn:#e3a06a; --warn-bg:#3a2a1c; --good:#7fcf98; --good-bg:#1d3326; --bad:#ec8c8c; --bad-bg:#3d2020; --chip:#262d39; --lA:#7ea6e0; --lB:#5fc2c2; --lC:#b495e3; --lD:#df8fc0; --lE:#dcb860; --lF:#d08a76; --lG:#a5a5a5; --lH:#7fcf98; color-scheme:dark }
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+*{box-sizing:border-box}
+a{color:var(--accent)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:8px 16px;flex-wrap:wrap}
+.top h1{font-family:var(--display);font-weight:600;font-size:20px;margin:0;letter-spacing:.01em}
+.top .built{color:var(--muted);font-size:12px}
+.views{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.views button{background:transparent;border:1px solid var(--line);color:var(--fg);padding:5px 11px;border-radius:999px;font:inherit;font-size:13px;cursor:pointer}
+.views button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.views button:focus-visible,.tabs button:focus-visible,.rail button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0;min-height:calc(100% - 50px)}
+.rail{border-right:1px solid var(--line);padding:14px 12px;background:var(--panel)}
+.rail h2{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:14px 0 6px}
+.rail button{display:block;width:100%;text-align:left;background:transparent;border:0;color:var(--fg);font:inherit;padding:6px 8px;border-radius:6px;cursor:pointer}
+.rail button.fork{padding-left:22px;font-size:14px}
+.rail button[aria-current="true"]{background:var(--chip);font-weight:600}
+.rail .load{font-family:var(--mono);font-size:11px;color:var(--muted);float:right}
+main{padding:18px 20px 60px;min-width:0;max-width:1240px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:14px;min-width:0}
+h2.sec{font-family:var(--display);font-weight:500;font-size:22px;margin:4px 0 10px;text-wrap:balance}
+h3{font-size:15px;margin:14px 0 6px}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;min-width:0}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0 14px}
+.tabs button{background:var(--chip);border:0;color:var(--fg);padding:5px 10px;border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.tscroll{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:bottom;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;min-width:0}
+td.num{font-family:var(--mono);font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.narrow{max-width:420px}
+tr.hit td{background:var(--chip)}
+.chip{display:inline-block;border-radius:4px;padding:1px 6px;font-size:11.5px;font-weight:600;letter-spacing:.02em;white-space:nowrap;background:var(--chip);color:var(--fg);margin-right:3px}
+.lane{color:#fff}
+.lA{background:var(--lA)}.lB{background:var(--lB)}.lC{background:var(--lC)}.lD{background:var(--lD)}.lE{background:var(--lE)}.lF{background:var(--lF)}.lG{background:var(--lG)}.lH{background:var(--lH)}
+.flare{background:var(--warn-bg);color:var(--warn)}
+.cand{background:var(--good-bg);color:var(--good)}
+.broken{background:var(--bad-bg);color:var(--bad)}
+.role-signal{background:var(--warn-bg);color:var(--warn)}
+.role-cause{background:var(--good-bg);color:var(--good)}
+.cite{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+.bar{display:inline-block;height:8px;background:var(--accent);border-radius:2px;vertical-align:middle;margin-right:6px}
+.prose{max-width:72ch;font-size:15px}
+.prose p{margin:0 0 10px}
+.prose h3{font-family:var(--display);font-weight:500;font-size:18px;margin:16px 0 6px}
+.prose h4{font-size:14px;margin:12px 0 4px}
+.prose table{font-size:13px}
+.prose ul,.prose ol{padding-left:22px}
+.prose .tscroll{margin:8px 0}
+.score{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.score .ax{background:var(--chip);border-radius:6px;padding:8px 10px}
+.score .ax .lab{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.score .ax .v{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+.score .ax .v .att{color:var(--accent)}
+.score .ax .v .d{color:var(--muted);font-size:11px;margin-left:4px}
+svg.strip{width:100%;height:64px;display:block}
+svg.strip text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
+svg.strip line{stroke:var(--line)}
+.grid td{padding:3px 4px;text-align:center;font-family:var(--mono);font-size:11px;font-variant-numeric:tabular-nums}
+.grid td.w{text-align:left;font-family:var(--mono);white-space:nowrap}
+.grid .cell{display:block;border-radius:3px;padding:2px 0;min-width:30px;color:var(--fg)}
+.grid tr.dense td.w{font-weight:700}
+.legend{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px;font-size:12px}
+.muted{color:var(--muted)}
+.rec .members{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.rec .members button{background:var(--chip);border:0;border-radius:4px;padding:2px 8px;font:inherit;font-size:12px;cursor:pointer;color:var(--fg)}
+.rec .members button:hover{background:var(--accent);color:var(--accent-ink)}
+.search{width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit;margin-bottom:8px}
+@media (max-width:860px){ .wrap{grid-template-columns:1fr} .rail{border-right:0;border-bottom:1px solid var(--line);padding:8px 16px} .rail .tree{display:flex;flex-wrap:wrap;gap:4px} .rail button{width:auto} .rail button.fork{padding-left:8px} .rail h2{width:100%} main{padding:14px 16px 40px} }
+@media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<div class="top"><h1>/*__TITLE__*/</h1><span class="built" id="built"></span><nav class="views" id="views" aria-label="Views"></nav></div>
+<div class="wrap"><aside class="rail" id="rail"></aside><main id="main"></main></div>
+<script>
+const DATA = /*__DATA__*/null;
+const VIEWS=DATA.display.views;   // the views and their names (pack.toml [display.viewer] views)
+const S={view:"narratives",nid:null,tab:"overview",era:null,etab:"co",q:""};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","&gt;":"&gt;",'"':"&quot;"}[c]||c));
+function inline(s){ s=esc(s);
+  s=s.replace(/\[([a-z0-9-]+) (tl|claims|audit) ([\d.]+(?:,\s*[\d.]+)*)\]/g,'<span class="cite">[$1 $2 $3]</span>');
+  s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,u)=>/^https?:/.test(u)?`<a href="${u}" target="_blank" rel="noopener">${t}</a>`:`<span class="ref" title="${u}">${t}</span>`);
+  s=s.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/(^|[\s(])\*([^*\n]+)\*/g,"$1<em>$2</em>").replace(/`([^`]+)`/g,"<code>$1</code>");
+  return s; }
+function md(src){ const out=[]; const lines=(src||"").split("\n"); let i=0;
+  while(i<lines.length){ const l=lines[i];
+    if(!l.trim()){i++;continue}
+    if(l.startsWith("|")){ const rows=[]; while(i<lines.length&&lines[i].startsWith("|")){rows.push(lines[i]);i++}
+      const cells=r=>r.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim()); const hdr=cells(rows[0]); const body=rows.slice(1).filter(r=>!/^\|[\s\-:|]+\|$/.test(r.trim()));
+      out.push('<div class="tscroll"><table><thead><tr>'+hdr.map(h=>`<th>${inline(h)}</th>`).join("")+'</tr></thead><tbody>'+body.map(r=>'<tr>'+cells(r).map(c=>`<td>${inline(c)}</td>`).join("")+'</tr>').join("")+'</tbody></table></div>'); continue }
+    const h=l.match(/^(#{2,5})\s+(.*)/); if(h){ const lv=Math.min(h[1].length+1,5); out.push(`<h${lv}>${inline(h[2])}</h${lv}>`); i++; continue }
+    if(/^\s*([-*]|\d+\.)\s/.test(l)){ const ol=/^\s*\d+\./.test(l); const items=[]; while(i<lines.length&&/^\s*([-*]|\d+\.)\s/.test(lines[i])){ let t=lines[i].replace(/^\s*([-*]|\d+\.)\s+/,""); i++; while(i<lines.length&&/^\s{2,}\S/.test(lines[i])&&!/^\s*([-*]|\d+\.)\s/.test(lines[i])){t+=" "+lines[i].trim();i++} items.push(`<li>${inline(t)}</li>`) }
+      out.push(`<${ol?"ol":"ul"}>${items.join("")}</${ol?"ol":"ul"}>`); continue }
+    if(l.startsWith(">")){ out.push(`<blockquote>${inline(l.replace(/^>\s?/,""))}</blockquote>`); i++; continue }
+    let p=l; i++; while(i<lines.length&&lines[i].trim()&&!lines[i].startsWith("|")&&!/^#{2,}/.test(lines[i])&&!/^\s*([-*]|\d+\.)\s/.test(lines[i])){p+=" "+lines[i];i++}
+    out.push(`<p>${inline(p)}</p>`) }
+  return `<div class="prose">${out.join("")}</div>` }
+const laneChip=l=>String(l||"").split(/[,\s]+/).filter(x=>/^[A-H]$/.test(x)).map(x=>`<span class="chip lane l${x}" title="${DATA.lane_names[x]}">${x}</span>`).join("")||esc(l||"");
+const roleChip=r=>{const k=(r||"").split(/[\s,(]/)[0].toLowerCase(); return `<span class="chip role-${k}">${esc(r||"")}</span>`};
+const flareChip=f=>{const t=(f||"").trim(); if(!t) return ""; return /^possible/i.test(t)?`<span class="chip flare">possible flare</span> <span class="muted">${inline(t.replace(/^possible flare:?\s*/i,""))}</span>`:inline(t)};
+const forkChip=f=>{const t=(f||"").trim(); if(/candidate/i.test(t)) return `<span class="chip cand">candidate</span>`; if(/^spawned/i.test(t)) return `<span class="chip cand">${esc(t)}</span>`; return `<span class="muted">${inline(t)}</span>`};
+const col=(rows,...names)=>{ if(!rows.length) return null; const ks=Object.keys(rows[0]); for(const n of names){ const k=ks.find(k=>k===n||k.startsWith(n)); if(k) return k } return null };
+function table(rows,spec,rowClass){ if(!rows||!rows.length) return '<p class="muted">None.</p>';
+  const ks=Object.keys(rows[0]); const cols=spec||ks.map(k=>({k,h:k}));
+  return '<div class="tscroll"><table><thead><tr>'+cols.map(c=>`<th>${esc(c.h||c.k)}</th>`).join("")+'</tr></thead><tbody>'+rows.map((r,i)=>`<tr${rowClass?` class="${rowClass(r)}"`:""}${r["#"]?` id="row-${esc(r["#"])}"`:""}>`+cols.map(c=>`<td class="${c.cls||""}">${c.f?c.f(r[c.k],r):inline(r[c.k])}</td>`).join("")+'</tr>').join("")+'</tbody></table></div>' }
+function parseScore(s){ return s }
+const AX=[["clusters","Clusters"],["rows","Rows"],["roots","Roots"],["circle_roots","Circle roots"],["reading_roots","Reading roots"],["contradictions","Contradictions"],["load","Load"],["max_downstream","Max downstream"],["closures_pred","Closures predicted"],["unaff_roots","Unaffiliated roots"],["survive","Survive under rival"],["tests","Tests"]];
+function scoreGrid(n){ const a=n.score_lines[0],b=n.score_lines[1]; if(!a) return '<p class="muted">No score line.</p>';
+  return '<div class="score">'+AX.map(([k,lab])=>{ if(a[k]==null&&(!b||b[k]==null)) return ""; const suf=k==="closures_pred"?` of ${a.closures_all??(b&&b.closures_all)??"?"}`:k==="unaff_roots"?` of ${a.roots_all??"?"}`:k==="survive"?` of ${a.nodes_all??(b&&b.nodes_all)??"?"}`:"";
+    const av=a[k]==null?"–":a[k], bv=b&&b[k]!=null?b[k]:null; const d=(bv!=null&&a[k]!=null)?(bv-a[k]):null;
+    return `<div class="ax"><div class="lab">${lab}</div><div class="v">${av}${suf}${bv!=null?` <span class="att">${bv}${k==="closures_pred"&&b.closures_all?` of ${b.closures_all}`:k==="unaff_roots"&&b.roots_all?` of ${b.roots_all}`:""}</span>`:""}${d!=null&&d!==0?`<span class="d">${d>0?"+":""}${Math.round(d*10)/10}</span>`:""}</div></div>` }).join("")+'</div><p class="muted" style="font-size:12px;margin:6px 0 0">Author first; <span style="color:var(--accent)">attacker</span> second where one has written.</p>' }
+function strip(nodes){ const ys=nodes.map(n=>{const m=(n.date||"").match(/\b(19[3-9]\d|20[0-4]\d)\b/); return m?+m[1]:null}); const yrs=ys.filter(Boolean); if(!yrs.length) return "";
+  const y0=Math.min(1933,...yrs), y1=Math.max(2026,...yrs); const W=1000,H=64,L=30,R=30; const x=y=>L+(y-y0)/(y1-y0)*(W-L-R);
+  const ticks=[]; for(let y=Math.ceil(y0/10)*10;y<=y1;y+=10) ticks.push(y);
+  const lanes={}; const dots=nodes.map((n,i)=>{ const y=ys[i]; if(!y) return ""; const l=(n.lane||"A").match(/[A-H]/); const ln=l?l[0]:"A"; lanes[ln]=(lanes[ln]||0); const yy=18+("ABCDEFGH".indexOf(ln))*4; return `<circle cx="${x(y).toFixed(1)}" cy="${yy}" r="4" fill="var(--l${ln})" opacity=".85"><title>${esc(n["#"])}. ${esc(n.node).slice(0,120)} (${esc(n.date)})</title></circle>` }).join("");
+  return `<svg class="strip" viewBox="0 0 ${W} ${H}" role="img" aria-label="Nodes by year">`+ticks.map(t=>`<line x1="${x(t)}" x2="${x(t)}" y1="12" y2="52"/><text x="${x(t)}" y="62" text-anchor="middle">${t}</text>`).join("")+dots+`</svg>` }
+function nar(id){ return DATA.narratives.find(n=>n.id===id) }
+function short(id){ return id.replace(/^narrative-/,"") }
+function renderRail(){ const r=document.getElementById("rail"); if(S.view==="narratives"){ const mains=DATA.narratives.filter(n=>n.mode==="mainline");
+    r.innerHTML='<h2>Family tree</h2><div class="tree">'+mains.map(m=>{ const forks=DATA.narratives.filter(f=>f.mode==="fork"&&f.parent.includes(short(m.id))); const ld=n=>{const l=n.score_lines; return l.length?l[l.length-1].load:""};
+      return `<button data-nid="${m.id}" aria-current="${S.nid===m.id}">${esc(short(m.id))}<span class="load">${ld(m)}</span></button>`+forks.map(f=>`<button class="fork" data-nid="${f.id}" aria-current="${S.nid===f.id}">↳ ${esc(short(f.id).replace(short(m.id)+"-",""))}<span class="load">${ld(f)}</span></button>`).join("") }).join("")+'</div><h2>Load</h2><p class="muted" style="font-size:12px;margin:0">The last score line on the page (the attacker\'s where one has written). Lower is fewer or lighter contradictions for the coverage claimed; read it against clusters and roots.</p>';
+    r.querySelectorAll("button[data-nid]").forEach(b=>b.onclick=()=>{S.nid=b.dataset.nid;S.tab="overview";go()}) }
+  else if(S.view==="synchrony"){ r.innerHTML='<h2>Eras</h2><div class="tree">'+DATA.synchrony.map(e=>`<button data-era="${e.id}" aria-current="${S.era===e.id}">${esc(e.era)}</button>`).join("")+'</div>'; r.querySelectorAll("button").forEach(b=>b.onclick=()=>{S.era=b.dataset.era;go()}) }
+  else if(S.view==="register"){ const secs=Object.keys(DATA.register.sections||{}); r.innerHTML='<h2>Sections</h2><div class="tree">'+secs.map(s=>`<button data-sec="${esc(s)}">${esc(s)}</button>`).join("")+'</div>'; r.querySelectorAll("button").forEach(b=>b.onclick=()=>{const el=document.getElementById("sec-"+b.dataset.sec.replace(/\W+/g,"-"));if(el)el.scrollIntoView({block:"start"})}) }
+  else r.innerHTML='<h2>About</h2><p class="muted" style="font-size:13px">'+esc(DATA.display.about)+'</p>' }
+function renderNarrative(n){ const tabs=[["overview","Overview"],["nodes",`Nodes (${n.nodes.length})`],["ledger",`Ledger (${n.ledger.length})`],["carriers","Carriers and interests"],["objections","Objections"],["forks","Forks and tests"],["leads",`Leads (${n.leads.length})`]];
+  let h=`<h2 class="sec">${esc(n.title)}</h2><div class="card"><dl class="kv"><dt>Mode</dt><dd>${esc(n.mode)}${n.mode==="fork"?` · parent ${inline(n.parent)}`:""}</dd><dt>Thesis</dt><dd>${inline(n.thesis_line)}</dd><dt>Alternative</dt><dd>${inline(n.alternative_line)}</dd><dt>Span</dt><dd>${esc(n.span)} · lanes ${laneChip(n.lanes)}</dd><dt>Size</dt><dd>${n.words.toLocaleString()} words · ${n.nodes.length} nodes · ${n.ledger.length} ledger rows</dd></dl></div>`;
+  h+='<div class="tabs">'+tabs.map(([k,l])=>`<button data-tab="${k}" aria-pressed="${S.tab===k}">${l}</button>`).join("")+'</div>';
+  const t=S.tab;
+  if(t==="overview"){ h+=`<div class="card"><h3>Score card</h3>${scoreGrid(n)}</div><div class="card"><h3>Nodes by year and lane</h3>${strip(n.nodes)}<div class="legend">${"ABCDEFGH".split("").map(l=>`<span class="chip lane l${l}">${l}</span> <span class="muted">${DATA.lane_names[l]}</span>`).join("")}</div></div><div class="card"><h3>Thesis</h3>${md(n.thesis)}</div>${n.deltas?`<div class="card"><h3>Deltas against the parent</h3>${md(n.deltas)}</div>`:""}<div class="card"><h3>Score card, as written</h3>${md(n.scorecard)}</div>` }
+  if(t==="nodes"){ h+=`<div class="card"><input class="search" id="q" placeholder="Filter nodes (text, lane letter, role)" value="${esc(S.q)}">`+table(n.nodes.filter(r=>!S.q||JSON.stringify(r).toLowerCase().includes(S.q.toLowerCase())),[{k:"#",h:"#",cls:"num"},{k:"date",h:"Date",cls:"num"},{k:"lane",h:"Lane",f:laneChip},{k:"node",h:"Node",cls:"narrow"},{k:col(n.nodes,"carriers")||"carriers (independent roots)",h:"Carriers (roots)",cls:"narrow"},{k:"rows",h:"Rows",cls:"narrow"},{k:"depends on",h:"Depends on",cls:"num"},{k:"role",h:"Role",f:roleChip}])+'</div>' }
+  if(t==="ledger"){ const mx=Math.max(...n.ledger.map(r=>parseFloat(r.weight)||0),0.01);
+    h+='<div class="card">'+table(n.ledger,[{k:"#",h:"#",cls:"num"},{k:"node",h:"Node",cls:"num"},{k:"contradiction",h:"Contradiction",cls:"narrow"},{k:"side taken",h:"Side taken",cls:"narrow"},{k:"other side",h:"Other side",cls:"narrow"},{k:"weight",h:"Weight",cls:"num",f:v=>{const w=parseFloat(v)||0;return `<span class="bar" style="width:${Math.round(w/mx*60)}px"></span>${esc(String(v).split(" ")[0])}`}},{k:"downstream",h:"Downstream",cls:"num",f:(v,r)=>`${esc(String(v).split(" ")[0])}${r._downstream_computed!=null&&String(r._downstream_computed)!==String(v).split(" ")[0]?` <span class="muted" title="computed from Depends on">(${r._downstream_computed})</span>`:""}`},{k:"why survivable",h:"Why survivable",cls:"narrow"},{k:"fork",h:"Fork",f:forkChip},{k:"flare",h:"Flare",cls:"narrow",f:flareChip}])+'</div>' }
+  if(t==="carriers"){ h+=`<div class="card"><h3>Carriers</h3>${table(n.carriers)}</div><div class="card"><h3>Interests</h3>${table(n.interests)}</div><div class="card"><h3>Synchrony</h3>${table(n.synchrony)}</div>` }
+  if(t==="objections"){ h+=`<div class="card"><h3>Objections (written by the attacker)</h3>${md(n.objections)}</div>` }
+  if(t==="forks"){ h+=`<div class="card"><h3>Forks</h3>${md(n.forks)}</div><div class="card"><h3>Tests</h3>${md(n.tests)}</div>` }
+  if(t==="leads"){ h+=`<div class="card"><h3>Leads returned</h3>${table(n.leads)}</div><div class="card"><h3>Relations returned</h3>${table(n.relations)}</div>` }
+  return h }
+function renderCompare(){ const ns=DATA.narratives; const rows=AX.map(([k,lab])=>{ const r={axis:lab}; ns.forEach(n=>{ const a=n.score_lines[0]||{}, b=n.score_lines[1]; r[n.id]=(a[k]??"–")+(b&&b[k]!=null?` → ${b[k]}`:"") }); return r });
+  return `<h2 class="sec">Narratives side by side</h2><p class="muted" style="max-width:72ch">No composite rank, by rule. Each cell is the author's figure, then the attacker's after the arrow. Read load against clusters and roots: a story that claims little has few contradictions.</p><div class="card">${table(rows,[{k:"axis",h:"Axis"},...ns.map(n=>({k:n.id,h:short(n.id),cls:"num"}))])}</div><div class="card"><h3>Theses</h3>${table(ns.map(n=>({page:short(n.id),mode:n.mode,thesis:n.thesis_line,alternative:n.alternative_line})),[{k:"page",h:"Page"},{k:"mode",h:"Mode"},{k:"thesis",h:"Thesis",cls:"narrow"},{k:"alternative",h:"Alternative",cls:"narrow"}])}</div>` }
+function renderRecurring(){ const g=DATA.recurring; const cross=g.filter(x=>x.kind==="cross-mainline"), inh=g.filter(x=>x.kind!=="cross-mainline");
+  const block=(list,title,note)=>`<div class="card"><h3>${title} (${list.length})</h3><p class="muted" style="font-size:13px">${note}</p>`+list.map(x=>`<div class="rec" style="padding:8px 0;border-bottom:1px solid var(--line)"><div>${inline(x.contradiction)}</div><div class="members">${x.members.map(m=>`<button data-nid="${m.page}" data-row="${esc(m.row)}" title="${esc(m.side)}">${esc(short(m.page))} row ${esc(m.row)}${/^possible/i.test(m.flare)?" ⚑":""}</button>`).join("")}</div></div>`).join("")+'</div>';
+  return `<h2 class="sec">Contradictions that recur</h2><p class="muted" style="max-width:72ch">Ledger rows on different pages that cite the same row or lead. Those taken by more than one mainline are the next investigations. ⚑ marks a possible flare. Click a member to open that page's ledger.</p>`+block(cross,"Across mainlines","Two or more narrative families had to take a side on the same rows.")+block(inh,"Inherited within one family","A fork carrying its parent's row; the sides may differ.") }
+function heat(){ const wins=Object.keys(DATA.grid); const dense=new Set(DATA.dense.map(d=>d.window)); const mx=Math.max(...wins.flatMap(w=>Object.values(DATA.grid[w])));
+  return `<div class="tscroll"><table class="grid"><thead><tr><th>Window</th>${"ABCDEFGH".split("").map(l=>`<th title="${DATA.lane_names[l]}">${l}</th>`).join("")}<th>Total</th></tr></thead><tbody>`+wins.map(w=>{const c=DATA.grid[w]; const tot=Object.values(c).reduce((a,b)=>a+b,0); return `<tr class="${dense.has(w)?"dense":""}"><td class="w">${esc(w)}</td>`+"ABCDEFGH".split("").map(l=>{const v=c[l]||0; const a=v?Math.min(0.15+0.85*Math.sqrt(v/mx),1):0; return `<td><span class="cell" style="background:color-mix(in srgb, var(--l${l}) ${Math.round(a*100)}%, transparent)">${v||""}</span></td>`}).join("")+`<td class="num">${tot}</td></tr>`}).join("")+'</tbody></table></div>' }
+function renderSynchrony(){ let h=`<h2 class="sec">Synchrony</h2><p class="muted" style="max-width:72ch">Dated timeline rows from ${DATA.display.synchrony_from} on, by window (a year; a quarter from ${DATA.display.quarter_from}) and lane, from the pack's mechanical assignment; the era pages reassign about one row in eight and say why. Bold windows are dense: three or more lanes moving at once.</p><div class="card"><div class="legend">${"ABCDEFGH".split("").map(l=>`<span class="chip lane l${l}">${l}</span> <span class="muted">${DATA.lane_names[l]}</span>`).join("")}</div>${heat()}</div>`;
+  const e=DATA.synchrony.find(x=>x.id===S.era)||DATA.synchrony[0]; if(!e) return h; S.era=e.id;
+  const tabs=[["co",`Co-movements (${e.co.length})`],["windows",`Windows (${e.windows.length})`],["contradictions",`Contradictions (${e.contradictions.length})`],["signals",`Signals (${e.signals.length})`],["orgs",`Organisations (${e.orgs.length})`],["lanes","Lanes"],["builders","For the builders"]];
+  h+=`<h2 class="sec">${esc(e.title)}</h2><div class="tabs">`+tabs.map(([k,l])=>`<button data-etab="${k}" aria-pressed="${S.etab===k}">${l}</button>`).join("")+'</div><div class="card">';
+  const t=S.etab; if(t==="co") h+=table(e.co,null,null); else if(t==="windows") h+=table(e.windows); else if(t==="contradictions") h+=table(e.contradictions,Object.keys(e.contradictions[0]||{}).map(k=>({k,h:k,f:k==="flare"?flareChip:undefined,cls:/node|parties|bears/.test(k)?"narrow":""}))); else if(t==="signals") h+=table(e.signals); else if(t==="orgs") h+=table(e.orgs); else if(t==="lanes") h+=md(e.lanes); else h+=md(e.builders);
+  return h+'</div>' }
+function renderRegister(){ const r=DATA.register; if(!r.title) return '<p class="muted">No register yet.</p>'; let h=`<h2 class="sec">${esc(r.title)}</h2>`; for(const [k,v] of Object.entries(r.sections)) h+=`<div class="card" id="sec-${k.replace(/\W+/g,"-")}"><h3>${esc(k)}</h3>${md(v)}</div>`; return h }
+function go(){ document.getElementById("built").textContent="built "+DATA.built; const v=document.getElementById("views"); v.innerHTML=VIEWS.map(([k,l])=>`<button data-v="${k}" aria-pressed="${S.view===k}">${l}</button>`).join(""); v.querySelectorAll("button").forEach(b=>b.onclick=()=>{S.view=b.dataset.v;go()});
+  renderRail(); const m=document.getElementById("main"); let h="";
+  if(S.view==="narratives"){ if(!S.nid) S.nid=(DATA.narratives.find(n=>n.id===DATA.display.default_page)||DATA.narratives[0]).id; h=renderNarrative(nar(S.nid)) }
+  else if(S.view==="compare") h=renderCompare(); else if(S.view==="recurring") h=renderRecurring(); else if(S.view==="synchrony") h=renderSynchrony(); else h=renderRegister();
+  m.innerHTML=h; m.querySelectorAll("button[data-tab]").forEach(b=>b.onclick=()=>{S.tab=b.dataset.tab;go()}); m.querySelectorAll("button[data-etab]").forEach(b=>b.onclick=()=>{S.etab=b.dataset.etab;go()});
+  m.querySelectorAll(".rec button[data-nid]").forEach(b=>b.onclick=()=>{S.view="narratives";S.nid=b.dataset.nid;S.tab="ledger";go();const el=document.getElementById("row-"+b.dataset.row);if(el){el.classList.add("hit");el.scrollIntoView({block:"center"})}});
+  const q=document.getElementById("q"); if(q){ q.oninput=()=>{S.q=q.value; const pos=q.selectionStart; go(); const q2=document.getElementById("q"); q2.focus(); q2.setSelectionRange(pos,pos)} }
+  try{ localStorage.setItem("nv-state",JSON.stringify({view:S.view,nid:S.nid,tab:S.tab,era:S.era,etab:S.etab})) }catch(e){}
+  if(S.view==="narratives"&&S.nid) history.replaceState(null,"","#"+short(S.nid)); else history.replaceState(null,"","#"+S.view); window.scrollTo({top:0}) }
+(function start(){ try{ const s=JSON.parse(localStorage.getItem("nv-state")||"null"); if(s){ Object.assign(S,s); S.q="" } }catch(e){}
+  const tok=(location.hash||"").slice(1); if(tok){ const n=DATA.narratives.find(x=>short(x.id)===tok); if(n){S.view="narratives";S.nid=n.id} else if(VIEWS.some(v=>v[0]===tok)) S.view=tok }
+  if(S.nid&&!nar(S.nid)) S.nid=null; go() })();
+</script>
+</body>
+</html>

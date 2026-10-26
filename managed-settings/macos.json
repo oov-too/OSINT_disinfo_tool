@@ -1,0 +1,50 @@
+{
+  "allowedProviders": [
+    "bedrock"
+  ],
+  "availableModels": [
+    "opus",
+    "haiku"
+  ],
+  "maxEffortLevel": "high",
+  "allowManagedHooksOnly": true,
+  "allowManagedPermissionRulesOnly": false,
+  "extraKnownMarketplaces": {
+    "ledger-local": {
+      "source": {
+        "source": "directory",
+        "path": "/Volumes/research/ledger-bundle"
+      }
+    }
+  },
+  "strictKnownMarketplaces": [
+    {
+      "source": "directory",
+      "path": "/Volumes/research/ledger-bundle"
+    }
+  ],
+  "enabledPlugins": {
+    "ledger@ledger-local": true
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "bedrock-runtime.REGION.amazonaws.com"
+      ],
+      "allowManagedDomainsOnly": true
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python3 tools/*)",
+      "Bash(python3 ledger.py *)",
+      "Bash(ledger *)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL": "1",
+    "AWS_REGION": "REGION"
+  }
+}

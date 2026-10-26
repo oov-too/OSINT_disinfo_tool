@@ -1,0 +1,412 @@
+{
+ "_comment": "The SFO lens instance of the pilot pack (packs/pilot/lenses/sfo-cooperation.json; phase 6b prep, 2026-10-22): a lens from a text, the Serious Fraud Office's corporate guidance on self-reporting and co-operation, held at sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md. Each technique is attributed to the text with its held line; each is mapped onto the core technique catalogue (tools/technique-catalogue.json) with a fit of close, partial or none; techniques the catalogue lacks are proposed as new core criteria (handoff 5 of wip/platform-phase6b/handoffs.md), not added here. This is the text's frame, not the ledger's judgement, and the text concerns corporate co-operation with a prosecutor: applied to this corpus it is a reading aid for how an organisation handles what it knows, never a finding that any party committed an offence.",
+ "id": "sfo-cooperation",
+ "source": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+ "source_name": "Serious Fraud Office, SFO Corporate Guidance (published 24 April 2025 per the page's markup; GOV.UK, OGL v3)",
+ "source_kind": "text",
+ "sides": {
+  "disclosure": "the text's 'genuine co-operation' and 'exemplary co-operation' (a prompt self-report and the co-operative acts of section 4)",
+  "control": "the text's 'unco-operative' conduct (section 4: forum shopping, exploiting differences, obfuscating individuals, minimising or withholding, tactical delay, overloading)",
+  "unwitting": "no counterpart in the text (it addresses organisations, not individuals' knowledge); readers use the core meaning",
+  "mixed": "the text's own case: 'having self-reported and being co-operative are not one and the same' (a self-report followed by unco-operative conduct)",
+  "undecided": "the reader declines to place"
+ },
+ "techniques": [
+  {
+   "id": "S1",
+   "statement": "A knowing failure promptly to self-report suspected offending, once it comes to light, counts against the organisation.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     137
+    ],
+    "section": "2. The Decision to Self-Report",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [
+    {
+     "criterion": "C22",
+     "fit": "partial",
+     "why": "silence until discovered is the disclosure that serves the organisation; C22's 'disclosure spun toward secrecy' covers a late disclosure, not a withheld one"
+    },
+    {
+     "criterion": "C8",
+     "fit": "partial",
+     "why": "judged by deeds over time: whether it was aware before the investigation began is the test the text names"
+    }
+   ],
+   "qualification": ""
+  },
+  {
+   "id": "S2",
+   "statement": "'Forum shopping': reporting offending to another jurisdiction for strategic reasons.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     253
+    ],
+    "section": "4. Co-operation, unco-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [
+    {
+     "criterion": "C22",
+     "fit": "partial",
+     "why": "a disclosure made where it serves the discloser"
+    }
+   ],
+   "qualification": ""
+  },
+  {
+   "id": "S3",
+   "statement": "Exploiting differences between law enforcement agencies or legal systems.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     256
+    ],
+    "section": "4. Co-operation, unco-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "The text allows legitimate differences (a 'blocking statute') if they are communicated.",
+   "new_catalogue_criterion_proposed": "jurisdiction arbitrage: an account given differently to different authorities, each told what suits that forum"
+  },
+  {
+   "id": "S4",
+   "statement": "Obfuscating the involvement of individuals.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     259
+    ],
+    "section": "4. Co-operation, unco-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "",
+   "new_catalogue_criterion_proposed": "shielding individuals: the facts conceded, the people who knew them not named"
+  },
+  {
+   "id": "S5",
+   "statement": "Minimising or withholding the full extent of the conduct.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     259
+    ],
+    "section": "4. Co-operation, unco-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [
+    {
+     "criterion": "C1",
+     "fit": "close",
+     "why": "a partial account that concedes part of the truth to hold the rest"
+    },
+    {
+     "criterion": "C3",
+     "fit": "partial",
+     "why": "the true outside, with the withheld extent as the core"
+    }
+   ],
+   "qualification": ""
+  },
+  {
+   "id": "S6",
+   "statement": "Tactically delaying the provision of information or material.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     262
+    ],
+    "section": "4. Co-operation, unco-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "",
+   "new_catalogue_criterion_proposed": "tactical delay: material provided, but after the moment it would have mattered"
+  },
+  {
+   "id": "S7",
+   "statement": "Overloading the investigation with unnecessarily large amounts of material.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     265
+    ],
+    "section": "4. Co-operation, unco-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "",
+   "new_catalogue_criterion_proposed": "flooding: the record filled with true but unneeded material so that the needed item is hard to find"
+  },
+  {
+   "id": "S8",
+   "statement": "Failing proactively and promptly to preserve relevant digital and paper material (the converse of the first co-operative act); an internal investigation that could have led to material being destroyed.",
+   "role": "technique",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     185
+    ],
+    "section": "4. Co-operation, co-operative conduct (converse); footnote 12",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "",
+   "new_catalogue_criterion_proposed": "non-preservation or destruction of material"
+  },
+  {
+   "id": "S9",
+   "statement": "An internal investigation conducted so that first accounts from suspects are delayed, affording an opportunity for fabrication.",
+   "role": "operative",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     295
+    ],
+    "section": "footnote 12 (the DPA Code 2.9.3)",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [
+    {
+     "criterion": "C6",
+     "fit": "close",
+     "why": "accounts gathered late, after the people concerned could align them, are not independent confirmation"
+    }
+   ],
+   "qualification": ""
+  },
+  {
+   "id": "S10",
+   "statement": "A valid claim of legal professional privilege over relevant material is not penalised.",
+   "role": "exculpatory",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     177
+    ],
+    "section": "4. Co-operation",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "The text adds that a waiver of privilege is 'a significant co-operative act'.",
+   "new_catalogue_criterion_proposed": "a lawful privilege claim is not itself a mark of concealment"
+  },
+  {
+   "id": "S11",
+   "statement": "A prompt self-report followed by full co-operation leads to an invitation to negotiate a DPA rather than prosecution, save in exceptional circumstances.",
+   "role": "operative",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     108
+    ],
+    "section": "1. Overview",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [
+    {
+     "criterion": "C10",
+     "fit": "close",
+     "why": "the one who comes clean is treated differently from the one who is caught"
+    }
+   ],
+   "qualification": ""
+  },
+  {
+   "id": "S12",
+   "statement": "Co-operation includes identifying all persons involved, inside and outside the organisation, and making current and former officers and staff available for interview.",
+   "role": "operative",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     204
+    ],
+    "section": "4. Co-operation, co-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "The converse of S4."
+  },
+  {
+   "id": "S13",
+   "statement": "Co-operation includes identifying potentially relevant third-party material.",
+   "role": "operative",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     198
+    ],
+    "section": "4. Co-operation, co-operative conduct",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "",
+   "new_catalogue_criterion_proposed": "third-party custody: material the organisation can obtain from a contractor but does not seek or produce"
+  },
+  {
+   "id": "S14",
+   "statement": "Reporting to another agency is not a self-report to the SFO unless the SFO is told at the same time.",
+   "role": "operative",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     153
+    ],
+    "section": "3. How to Self-Report",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [
+    {
+     "criterion": "C22",
+     "fit": "partial",
+     "why": "a disclosure to an addressee who will not act on it"
+    }
+   ],
+   "qualification": ""
+  },
+  {
+   "id": "S15",
+   "statement": "Any claim to privilege over accounts of individuals taken by or for the organisation is scrutinised and recorded, so that disclosure duties can be met.",
+   "role": "operative",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office, SFO Corporate Guidance (GOV.UK, Crown copyright, OGL v3)",
+    "stated_in": "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md",
+    "lines": [
+     299
+    ],
+    "section": "footnote 14",
+    "catalogued": "2026-10-22"
+   },
+   "maps_to": [],
+   "qualification": "The counterweight to S10: privilege is respected, and recorded, not taken on trust."
+  }
+ ],
+ "catalogue_mapping": {
+  "mapped": [
+   "C1",
+   "C3",
+   "C6",
+   "C8",
+   "C10",
+   "C22"
+  ],
+  "no_counterpart_in_this_text": [
+   "C2",
+   "C4",
+   "C5",
+   "C7",
+   "C9",
+   "C11",
+   "C13",
+   "C14",
+   "C15",
+   "C16",
+   "C17",
+   "C18",
+   "C19",
+   "C21"
+  ],
+  "new_criteria_proposed": [
+   "S3: jurisdiction arbitrage: an account given differently to different authorities, each told what suits that forum",
+   "S4: shielding individuals: the facts conceded, the people who knew them not named",
+   "S6: tactical delay: material provided, but after the moment it would have mattered",
+   "S7: flooding: the record filled with true but unneeded material so that the needed item is hard to find",
+   "S8: non-preservation or destruction of material",
+   "S10: a lawful privilege claim is not itself a mark of concealment",
+   "S13: third-party custody: material the organisation can obtain from a contractor but does not seek or produce"
+  ]
+ },
+ "criteria": [],
+ "parameters": {},
+ "qualifications": {
+  "S3": "legitimate differences, communicated, are not unco-operative",
+  "S10": "a valid claim, not a waiver, is the text's standard; waiver is a co-operative act",
+  "S7": "the text asks for the volume of material to be agreed beforehand"
+ },
+ "placements": [],
+ "placements_rule": "The text names no one. Placements under this lens are made by readers at intake or attack, each row naming its reader, its date and the technique (S1 to S15) with the held source line it rests on; a placement is the reader's application of the text, never the text's own, and a lawful privilege claim (S10) is never on its own a placement on the control side.",
+ "weighting_rules": [
+  "discount: the row's Speaker speaks for an organisation a reader has placed on the control side for the matter the row concerns (S4 to S8)",
+  "discount: the row rests on an account the organisation gathered itself after a delay, the S9 case (no independent confirmation)",
+  "weight: the row's Speaker speaks for an organisation placed on the disclosure side for that matter (S11, S12)",
+  "unplaced: everything else; a privilege claim alone (S10) changes no weight"
+ ],
+ "public_record_checks": [
+  {
+   "id": "K1",
+   "technique": "S10 against S4",
+   "subject": "the X Working Group's name",
+   "statement": "POL withheld the name of a working group (an animal) under privilege; the court found it hard to see how a name could be privileged but accepted the claim.",
+   "where": "Common Issues at [37] to [42] (sources/pilot/canon/bates-no3-common-issues/)",
+   "label_before": "a counterexample test: S10 forbids reading the claim alone as concealment",
+   "result": "not run (phase 6b attack)"
+  },
+  {
+   "id": "K2",
+   "technique": "S6",
+   "subject": "the Receipts and Payments Mismatch notes of 29 September 2010",
+   "statement": "the notes list 'Potential impact upon ongoing legal cases' among the impacts; when did the bug reach defendants?",
+   "where": "POL00028838 (sources/pilot/document/2010-09-29-pol00028838-...), page 2",
+   "label_before": "test: dated entry into POL's records against dated disclosure",
+   "result": "not run"
+  },
+  {
+   "id": "K3",
+   "technique": "S13",
+   "subject": "Fujitsu's PEAKs and KELs",
+   "statement": "POL had a contractual right to obtain information held by Fujitsu; no PEAK or KEL was disclosed in any prosecution before the High Court proceedings.",
+   "where": "Hamilton at [18] (sources/pilot/canon/hamilton-v-post-office/)",
+   "label_before": "test: third-party material the organisation could obtain",
+   "result": "not run"
+  },
+  {
+   "id": "K4",
+   "technique": "S5 and S1",
+   "subject": "remote access",
+   "statement": "POL told the BBC and a committee in 2015 that remote access was not possible and admitted it in 2019 (The Register); Fujitsu's director said POL was aware (2024).",
+   "where": "sources/pilot/web/2024-01-17-post-office-boss-keeping-mum-on-horizon-remote-access/",
+   "label_before": "test: the earliest held POL document that records remote access, against the 2015 statement",
+   "result": "not run"
+  }
+ ]
+}

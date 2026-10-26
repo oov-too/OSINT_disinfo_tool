@@ -1,0 +1,27 @@
+# the PIR keyword seed (packs/pilot/registers/actor-polity-vocabulary.md)
+remote access
+Balancing Transaction
+APPSUP
+SSC
+ARQ
+PEAK
+KEL
+Sparrow
+X Working Group
+Working Group
+Mediation Scheme
+Second Sight
+Clarke advice
+expert witness
+disclosure
+robust
+bugs, errors and defects
+Receipts and Payments Mismatch
+Callendar Square
+Dalmellington
+Group Litigation
+settlement
+shareholder
+ShEx
+UKGI
+BEIS

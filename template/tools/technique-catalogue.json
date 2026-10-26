@@ -1,0 +1,656 @@
+{
+ "_comment": "The core technique catalogue of the disinformation lens (tools/platform-plan.md, the core-versus-pack table), in its shipped form. Each criterion is a general technique attributed to the person or text that stated it, with that public source and its date; subject nouns are parameters ({name} in the statement) that a lens instance fills (packs/<pack>/lenses/<instance>.json). An instance names the criteria it draws on and keeps the project's own references to where it holds each statement. The catalogue is the form of the lens, not a judgement of any source.",
+ "public_attributions": [
+  "American Alchemy",
+  "Jesse Michels",
+  "Serious Fraud Office",
+  "Steven Greer",
+  "UFO Secrets Are Held By A Global Cabal",
+  "https://www.youtube.com/watch?v=areO7Mej44E"
+ ],
+ "form": {
+  "criterion_fields": [
+   "id",
+   "statement (a template; {parameter} slots)",
+   "parameters (slot: what fills it)",
+   "role (technique | operative | exculpatory)",
+   "db_test (T1 to T6 or null)",
+   "qualification (general)",
+   "source (kind, name, public: the public interview or document, venue or publisher, date, address or section; catalogued). The private references to where a project holds the statement (a note, its rows, a time) live in the pack's lens instance under catalogue_refs, never here"
+  ],
+  "roles": {
+   "technique": "what the source says the adversary does; testable only against ground truth",
+   "operative": "a rule the source uses to sort sources; the filter uses these",
+   "exculpatory": "why honest people get it wrong"
+  },
+  "sides": {
+   "disclosure": "the side the source treats as truthful",
+   "control": "the side the source treats as serving secrecy or an organisation behind it",
+   "unwitting": "honest but uninformed, intercepted or gaslit; weighted only for what they saw themselves",
+   "mixed": "placed on both sides at different times",
+   "undecided": "the source declines to place"
+  },
+  "placement_fields": [
+   "name",
+   "canonical",
+   "match",
+   "exclude",
+   "chain_match",
+   "side",
+   "<source>_placement",
+   "reason",
+   "rows",
+   "time"
+  ],
+  "instance_fields": [
+   "id",
+   "source",
+   "sides (the source's own words for the five sides)",
+   "criteria (subject-content criteria, same fields as the catalogue's plus statement filled)",
+   "parameters (criterion id: {slot: value})",
+   "qualifications (criterion id: the source's own qualification)",
+   "placements",
+   "weighting_rules",
+   "public_record_checks",
+   "catalogue_criteria (the catalogue criteria this instance draws on)",
+   "catalogue_refs (criterion id: the project's private reference to the statement)"
+  ]
+ },
+ "weighting_rules": [
+  "discount: the row's Speaker is placed on the control side (one strike; the poison pill is inside the true coating)",
+  "discount: the row's first chain segment names a control-side person as a hop other than the speaker (the row rests on a known co-mingler)",
+  "weight: the row's Speaker is placed on the disclosure side",
+  "weight: the row's Speaker is placed unwitting and the row is firsthand (the truth as they know it, for what they saw)",
+  "weight: the row's first chain segment names a disclosure-side person and no control-side person",
+  "unplaced: everything else, including unwitting speakers' non-firsthand rows, mixed and undecided speakers, and speakers the source never names"
+ ],
+ "db_tests": {
+  "T1": {
+   "criteria": [
+    "C6",
+    "C9"
+   ],
+   "test": "control-side people whose own claims the cross-check tables record as corroborated by an independent route not itself placed control; each is a counterexample to the sorting"
+  },
+  "T2": {
+   "criteria": [
+    "C12",
+    "C20"
+   ],
+   "test": "rows in which a speaker or origin denies the subject's central possession claim; a disclosure-side denier is a counterexample (the criteria are the instance's)"
+  },
+  "T3": {
+   "criteria": [
+    "C4",
+    "C5",
+    "C13"
+   ],
+   "test": "rows presenting the subject's agents as hostile, harmful or a threat; a disclosure-side speaker is a counterexample"
+  },
+  "T4": {
+   "criteria": [
+    "C9"
+   ],
+   "test": "the one-strike rule applied to the source's own sourcing: relations and rows that rest on control-side people"
+  },
+  "T5": {
+   "criteria": [
+    "C15"
+   ],
+   "test": "firsthand reports of threats or reprisals against placed speakers; a control-side report is a counterexample"
+  },
+  "T6": {
+   "criteria": [
+    "C14",
+    "C16"
+   ],
+   "test": "disclosure- or unwitting-side people recorded approaching the source's camp as adversaries or red-teamers"
+  }
+ },
+ "criteria": [
+  {
+   "id": "C1",
+   "statement": "A source who tells part of the truth does more damage than a source who says nothing.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C2",
+   "statement": "There are three kinds of object ({object_kinds}); a source who says 'we don't know what they are', or who blends the three, does so on purpose.",
+   "parameters": {
+    "object_kinds": "the kinds of object the subject distinguishes"
+   },
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C3",
+   "statement": "Counterintelligence wraps a false core in true information: the true part is on the outside, the 'poison pill' inside.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C4",
+   "statement": "A source who says {the_objects} are real but unexplained, or that they are a threat to national security, is telling a 'big lie'; except that {the_exception}.",
+   "parameters": {
+    "the_objects": "the subject's objects",
+    "the_exception": "the source's own exception to the rule"
+   },
+   "role": "technique",
+   "db_test": "T3",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C5",
+   "statement": "Disinformation is attached to real information; the usual attachment is {usual_attachment}.",
+   "parameters": {
+    "usual_attachment": "what the source says disinformation is usually attached to"
+   },
+   "role": "technique",
+   "db_test": "T3",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C6",
+   "statement": "A claim counts as confirmed only when several people who do not know each other and have not synced their stories confirm it; a single uncorroborated source stays unconfirmed.",
+   "parameters": {},
+   "role": "operative",
+   "db_test": "T1",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C7",
+   "statement": "A controlled leak mixes information and disinformation to gaslight; the carrier may not know.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C8",
+   "statement": "People are judged by their deeds; given time, a bad actor shows himself.",
+   "parameters": {},
+   "role": "operative",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C9",
+   "statement": "One strike: anyone who knowingly co-mingles false information with true is dropped at once.",
+   "parameters": {},
+   "role": "operative",
+   "db_test": "T4",
+   "qualification": "Qualified by C10.",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C10",
+   "statement": "Unwitting error is forgiven if corrected; deliberate co-mingling is not; anything is forgiven to someone who comes clean.",
+   "parameters": {},
+   "role": "operative",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C11",
+   "statement": "People outside {the_programmes} ({outsiders}) speak the truth as they know it; not being read in is not lying.",
+   "parameters": {
+    "the_programmes": "the programmes or institutions whose insiders are 'read in'",
+    "outsiders": "the kinds of outsider the rule covers"
+   },
+   "role": "exculpatory",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C13",
+   "statement": "Anyone who presents {the_subject} as malevolent is wrong; {the_admixture} are deliberately mixed in with them.",
+   "parameters": {
+    "the_subject": "the subject's agents or actors",
+    "the_admixture": "what the source says is mixed in with them"
+   },
+   "role": "technique",
+   "db_test": "T3",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C14",
+   "statement": "Good people are intercepted by professional counterintelligence operatives; most who start down this path are intercepted and go off the mark.",
+   "parameters": {},
+   "role": "exculpatory",
+   "db_test": "T6",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C15",
+   "statement": "Danger is a marker of truth: no one bothers people who spread false, half or disinformation; people getting to the truth are intimidated.",
+   "parameters": {},
+   "role": "operative",
+   "db_test": "T5",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C16",
+   "statement": "The covert group deliberately sends out well-trained people, some trained at {training_site} to pass lie detectors and to social-engineer, to carry the message and misdirect.",
+   "parameters": {
+    "training_site": "the training site named"
+   },
+   "role": "technique",
+   "db_test": "T6",
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C17",
+   "statement": "People new to the subject with no intelligence background can be gaslit over and over.",
+   "parameters": {},
+   "role": "exculpatory",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C18",
+   "statement": "For every good witness there are ten who tell part truth and part fiction.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C19",
+   "statement": "The levers that turn people are money, fear, blackmail and, for the rich, {the_prize}; find the soft underbelly.",
+   "parameters": {
+    "the_prize": "the prize that turns the rich"
+   },
+   "role": "exculpatory",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C21",
+   "statement": "Material put out to discredit a truth-teller is a signal; the aim is a partial truth that fits the false disclosure.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C22",
+   "statement": "There are two disclosures: the truthful one and one that serves the secret agenda; a disclosure spun toward secrecy belongs to the second.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "person",
+    "name": "Steven Greer",
+    "public": {
+     "interview": "\"UFO Secrets Are Held By A Global Cabal\", an interview by Jesse Michels",
+     "venue": "American Alchemy (YouTube)",
+     "date": "2025-04-10",
+     "address": "https://www.youtube.com/watch?v=areO7Mej44E"
+    },
+    "catalogued": "2026-09-27"
+   }
+  },
+  {
+   "id": "C24",
+   "statement": "Jurisdiction arbitrage: an account given differently to different authorities or forums, each told what suits it.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "The source allows a difference that is lawful and communicated (a blocking statute).",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation, unco-operative conduct"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S3 (phase 6b)"
+   }
+  },
+  {
+   "id": "C25",
+   "statement": "Shielding individuals: the facts conceded, the people who knew or decided them not named.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation, unco-operative conduct"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S4 (phase 6b)"
+   }
+  },
+  {
+   "id": "C26",
+   "statement": "Tactical delay: material provided, but after the moment it would have mattered.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation, unco-operative conduct"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S6 (phase 6b)"
+   }
+  },
+  {
+   "id": "C27",
+   "statement": "Flooding: the record filled with true but unneeded material, so that the needed item is hard to find.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation, unco-operative conduct"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S7 (phase 6b)"
+   }
+  },
+  {
+   "id": "C28",
+   "statement": "Non-preservation: relevant material not preserved promptly, or an internal process run so that it could be lost or destroyed.",
+   "parameters": {},
+   "role": "technique",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation, co-operative conduct (converse); footnote 12"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S8 (phase 6b)"
+   }
+  },
+  {
+   "id": "C29",
+   "statement": "A lawful claim of privilege over material is not itself a mark of concealment.",
+   "parameters": {},
+   "role": "exculpatory",
+   "db_test": null,
+   "qualification": "The source adds that a waiver of privilege is a significant co-operative act, and that a privilege claim is recorded, not taken on trust.",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S10 (phase 6b)"
+   }
+  },
+  {
+   "id": "C30",
+   "statement": "Third-party custody: material the party can obtain from a contractor or other holder but does not seek or produce counts as withheld.",
+   "parameters": {},
+   "role": "operative",
+   "db_test": null,
+   "qualification": "",
+   "source": {
+    "kind": "text",
+    "name": "Serious Fraud Office",
+    "public": {
+     "document": "SFO Corporate Guidance (corporate co-operation and self-reporting)",
+     "publisher": "Serious Fraud Office, GOV.UK",
+     "date": "2025-04-24",
+     "licence": "Crown copyright, Open Government Licence v3.0",
+     "section": "4. Co-operation, co-operative conduct"
+    },
+    "catalogued": "2026-10-22",
+    "proposed_by": "a lens instance's technique S13 (phase 6b)"
+   }
+  }
+ ]
+}

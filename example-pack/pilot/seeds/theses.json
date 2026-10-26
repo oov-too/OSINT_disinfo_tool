@@ -1,0 +1,56 @@
+{
+ "_comment": "The pilot pack's thesis seeds (packs/pilot/seeds/theses.json; the shape tools/narrative_pack.py reads through tools/packload.py theses()). Drafted 2026-10-22 by the phase 6b prep session from the held sources; confirmed by the owner on 2026-10-22 (the seed and its rival).",
+ "accepted": "2026-10-22, the owner",
+ "theses": [
+  {
+   "key": "managed-knowledge",
+   "title": "Managed knowledge: bugs and remote access known in writing and kept out of disclosure and the public record",
+   "thesis": "From 2010 at the latest, people within the Post Office and Fujitsu recorded in writing that Horizon had bugs affecting branch accounts and that Fujitsu could alter branch data; the Post Office went on prosecuting and telling the public, Parliament and the courts that Horizon was robust and remote alteration impossible, and the knowledge was managed out of disclosure until the group litigation forced it out in 2019.",
+   "terms": [
+    "remote access",
+    "Balancing Transaction",
+    "APPSUP",
+    "SSC",
+    "Receipts and Payments Mismatch",
+    "Callendar Square",
+    "Dalmellington",
+    "Clarke",
+    "expert witness",
+    "disclosure",
+    "Sparrow",
+    "X Working Group",
+    "Working Group",
+    "robust",
+    "bugs, errors and defects",
+    "PEAK",
+    "KEL",
+    "ARQ",
+    "Jenkins",
+    "Vennells",
+    "Second Sight",
+    "Mediation Scheme",
+    "culture of secrecy"
+   ]
+  },
+  {
+   "key": "good-faith-reliance",
+   "title": "Good-faith reliance: executives misinformed by their supplier and their own structures (the rival)",
+   "thesis": "The Post Office's executives believed Horizon robust because their supplier, their audits and every prosecution told them so; the knowledge of bugs and remote access sat with Fujitsu and junior staff and did not reach those who made the statements; the failures were of competence, structure and oversight, not of knowledge withheld.",
+   "terms": [
+    "relied upon their supplier",
+    "IT experts and advisors",
+    "in-house expertise",
+    "not considered to be false",
+    "Fujitsu",
+    "audit",
+    "Ernst & Young",
+    "governance",
+    "board",
+    "shareholder",
+    "ShEx",
+    "UKGI",
+    "oversight"
+   ]
+  }
+ ]
+}

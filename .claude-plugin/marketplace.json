@@ -1,0 +1,13 @@
+{
+  "name": "ledger-local",
+  "owner": {
+    "name": "Ledger maintainers"
+  },
+  "plugins": [
+    {
+      "name": "ledger",
+      "source": "./plugin",
+      "description": "The ledger: setup from a group's own database, staged intake, narratives, reports and status."
+    }
+  ]
+}

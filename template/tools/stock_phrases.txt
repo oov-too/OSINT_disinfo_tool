@@ -1,0 +1,268 @@
+# Stock phrases, idioms, famous titles and set expressions that echo innocently. One per line, lower case, no punctuation.
+# tools/echoes.py drops any 5-word window that contains one of these. Add freely; never remove a line another page cites.
+shadow of a doubt
+lack of a better term
+for lack of a better
+close encounters of the third kind
+close encounters
+millions and millions of dollars
+millions of dollars
+billions of dollars
+in a court of law
+court of law
+the middle of the desert
+middle of nowhere
+the size of a football
+size of a football field
+military industrial complex
+global war on terror
+war on terror
+confirm or deny
+neither confirm nor deny
+can't confirm or deny
+go right ahead
+the tip of the iceberg
+tip of the iceberg
+at the end of the day
+the rest is history
+in the middle of the night
+a needle in a haystack
+needle in a haystack
+once in a lifetime
+the wild west
+the holy grail
+holy grail
+the elephant in the room
+elephant in the room
+the smoking gun
+smoking gun
+the whole nine yards
+a slap on the wrist
+a drop in the bucket
+the cat out of the bag
+out of the box
+the bottom line
+the big picture
+long story short
+to make a long story short
+a matter of time
+a matter of national security
+matter of national security
+national security
+in the public domain
+the public domain
+in the national interest
+the powers that be
+the deep state
+the tin foil hat
+tin foil hat
+the intelligence community
+intelligence community
+the department of defense
+department of defense
+the department of energy
+department of energy
+the air force
+the united states air force
+the united states
+united states government
+the federal government
+freedom of information act
+the national archives
+under oath
+on the record
+off the record
+sworn testimony
+in the 60s and 70s
+in the 70s and 80s
+in the 80s and 90s
+50s and 60s
+60s and 70s
+70s and 80s
+80s and 90s
+the last 20 years
+the last 30 years
+the last 50 years
+over the last few years
+in the last few years
+in the next few years
+a couple of years ago
+a few years ago
+a long time ago
+a long period of time
+a period of time
+period of time
+for a long time
+at the same time
+at that point in time
+at this point in time
+one of the things
+one of the reasons
+one of the most
+the first time in my life
+for the first time
+the beginning of the end
+the end of the world
+the rest of the world
+all over the world
+around the world
+the history of the world
+the history of mankind
+the history of humanity
+the human race
+the human condition
+the nature of reality
+the fabric of reality
+the fabric of space time
+space and time
+speed of light
+the speed of light
+faster than the speed of light
+the laws of physics
+laws of physics
+the scientific method
+the second law of thermodynamics
+the theory of relativity
+general relativity
+quantum mechanics
+quantum entanglement
+the double slit experiment
+the observer effect
+the big bang
+the origin of life
+the origin of the universe
+the meaning of life
+life after death
+the collective unconscious
+the book of revelation
+the book of genesis
+the old testament
+the new testament
+the tree of life
+the garden of eden
+the tower of babel
+sons of god
+the holy spirit
+the kingdom of heaven
+the son of man
+the son of god
+the word of god
+in the beginning
+let there be light
+the sphinx
+the ice age
+the last ice age
+the pentagon
+the white house
+the cia
+the fbi
+the nsa
+the dia
+the nro
+the state department
+the justice department
+capitol hill
+the united nations
+the soviet union
+the cold war
+world war two
+world war 2
+the second world war
+the first world war
+world war one
+the vietnam war
+the korean war
+the gulf war
+the iraq war
+9 11
+september 11
+the space race
+the apollo program
+the space shuttle
+the international space station
+the hubble telescope
+the james webb
+nasa
+the four minute mile
+new york times
+the new york times
+the washington post
+the wall street journal
+wall street journal
+the daily mail
+the guardian
+fox news
+cnn
+60 minutes
+the history channel
+the discovery channel
+national geographic
+youtube channel
+subscribe to the channel
+like and subscribe
+hit the like button
+the link in the description
+link in the description
+in the description below
+patreon
+this episode is brought to you by
+brought to you by
+thank you so much for
+thanks for having me
+thank you for having me
+thanks for watching
+thank you for watching
+i appreciate you
+it's a pleasure to be here
+great to be here
+glad to be here
+what do you think
+i don't know
+i don't think so
+i have no idea
+you know what i mean
+if you will
+so to speak
+as it were
+in other words
+in a sense
+in any case
+at any rate
+for what it's worth
+as far as i know
+as far as i can tell
+to the best of my knowledge
+to be honest with you
+to be perfectly honest
+the truth of the matter
+the fact of the matter
+the bottom of this
+get to the bottom of
+the bottom of it
+the light of day
+see the light of day
+the benefit of the doubt
+benefit of the doubt
+a grain of salt
+with a grain of salt
+the tip of the spear
+tip of the spear
+boots on the ground
+the rules of engagement
+rules of engagement
+chain of command
+the chain of command
+need to know
+need to know basis
+a need to know
+compartmentalized
+top secret
+eyes only
+top of the food chain
+pecking order
+the foot of the bed
+
+a good friend of mine
+front page of the paper
+turned on or turned off
+what happens when we die and

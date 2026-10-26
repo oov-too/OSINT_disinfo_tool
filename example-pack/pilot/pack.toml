@@ -1,0 +1,333 @@
+# packs/pilot/pack.toml: the phase 6b pilot pack of the ledger (tools/platform-plan.md phase 6b, prepared 2026-10-22).
+# A second domain that shares nothing with the project's first pack: the UK Post Office Horizon IT Inquiry. Written without touching core.
+# Every value is drawn from the held sources under sources/pilot/ (each named below) or the public record cited; the corpus case
+# is wip/platform-phase6b/corpus.md. Paths are relative to the project root. Every value confirmed by the owner on 2026-10-22, with one addition (Alan Bates as the third ledgered speaker).
+
+[pack]
+name = "pilot"
+title = "The Post Office Horizon IT Inquiry (phase 6b second-domain pilot)"
+version = "0.1.0"
+created = "2026-10-22"
+status = "pilot pack, confirmed by the owner 2026-10-22"
+confirmed = "2026-10-22"
+confirmed_by = "the owner"
+root = "packs/pilot"
+schema_extensions = "packs/pilot/schema-extensions.md"
+description = "The domain data for a pilot on a public inquiry with hearings and exhibits: the question, the referent object and three PIRs, five subjects and the two audited, the topic codes, the actor and polity vocabulary with a cited seed order of battle, a lens instance from a text (the SFO's corporate guidance), the canon (three judgments in numbered paragraphs), a near-empty codebook of the corpus's argot, the circles and adverse sources, the catalysts, the brief slots and one narrative seed."
+sources = "sources/pilot"
+corpus = "wip/platform-phase6b/corpus.md"
+licence_note = "Inquiry material: Crown copyright, Open Government Licence (the inquiry's terms, read 2026-10-22). Judgments: Crown copyright, held from the inquiry's exhibits; the judgment text does not ship: the pack carries the fetch manifest (packs/pilot/canon/fetch-manifest.toml) and the recipient re-holds from the inquiry's site under its terms; example notes quote in short passages with attribution (owner, 2026-10-22). Press and forum texts: held locally, linked out, never reproduced."
+
+[question]
+# setup stage 1: the question the pilot narrative will test (drawn from the terms of reference, paragraph B, and the held sources; confirmed by the owner 2026-10-22)
+text = "Did Post Office Ltd know, while it prosecuted subpostmasters and defended Horizon in public and in court, that branch accounts could be affected by bugs and altered remotely by Fujitsu without the subpostmaster's knowledge; and when did each actor first say so in writing?"
+source = "sources/pilot/web/2021-06-01-terms-of-reference-post-office-horizon-it-inquiry/text.md (paragraph B: 'a clear account of 1) the implementation and failings of Horizon over its lifecycle and 2) Post Office Ltd's use of information from Horizon when taking action against persons alleged to be responsible for shortfalls')"
+drafted_by = "phase 6b prep session, 2026-10-22"
+confirmed_by = "the owner, 2026-10-22"
+
+[pirs]
+# the recipient's declared priority intelligence requirements: a dated, attributed overlay that seeds keywords and surfaces entries
+# but never places anything the sources do not support (tools/platform-plan.md; read by tools/packload.py pirs())
+[[pirs.pir]]
+id = "PIR-1"
+question = "When did each actor first record, in writing, (a) bugs affecting branch accounts and (b) the ability to alter branch data without the subpostmaster's knowledge?"
+eeis = ["per actor (POL executives and board, POL's lawyers, Fujitsu's SSC and management, the shareholder): the earliest dated document", "its author and recipients", "whether it reached a defendant or a court, and when"]
+terms = ["remote access", "Balancing Transaction", "APPSUP", "SSC", "Receipts and Payments Mismatch", "Callendar Square", "Dalmellington", "bugs, errors and defects", "PEAK", "KEL", "ARQ"]
+declared = "2026-10-22"
+by = "phase 6b prep session; confirmed by the owner, 2026-10-22"
+[[pirs.pir]]
+id = "PIR-2"
+question = "How did POL's public, parliamentary and court statements on Horizon's reliability and on remote access change, and when?"
+eeis = ["each dated statement with its speaker and audience (2009, 2015, 2019, 2024)", "the documents the speaker held at that date"]
+terms = ["robust", "remote access", "no evidence", "integrity", "Parliamentary committee", "BBC", "admitted"]
+declared = "2026-10-22"
+by = "phase 6b prep session; confirmed by the owner, 2026-10-22"
+[[pirs.pir]]
+id = "PIR-3"
+question = "Who directed POL's response to its critics (Second Sight, the JFSA, the mediation scheme, the group litigation), through which bodies, and with what stated aims?"
+eeis = ["membership and dates of Project Sparrow and the X Working Group", "decisions on the mediation scheme and its Working Group", "instructions to lawyers", "what each member says now"]
+terms = ["Sparrow", "X Working Group", "Working Group", "Mediation Scheme", "Second Sight", "General Counsel", "Group Litigation"]
+declared = "2026-10-22"
+by = "phase 6b prep session; confirmed by the owner, 2026-10-22"
+
+[subjects]
+all = ["horizon-integrity-and-remote-access", "prosecutions-and-disclosure", "critics-redress-and-litigation", "governance-and-government", "human-impact"]
+pages_dir = "subjects"
+# the forthrightness audit is mandatory for notes under these (hearing days and exhibits that bear on PIR-1 and PIR-2)
+audited = ["horizon-integrity-and-remote-access", "prosecutions-and-disclosure"]
+graph_order = ["horizon-integrity-and-remote-access", "prosecutions-and-disclosure", "critics-redress-and-litigation", "governance-and-government", "human-impact"]
+
+[audit]
+heading = "## Forthrightness audit"
+legacy_heading = "## Forthrightness audit"
+mandatory_subjects = ["horizon-integrity-and-remote-access", "prosecutions-and-disclosure"]
+# grounds of a stated decline shown in the held transcripts (packs/pilot/schema-extensions.md section 3, with lines)
+basis_vocabulary = ["legal professional privilege", "privilege against self-incrimination", "deferral to another witness or body"]
+channelled_kind = "none"
+channelled_caption = "no channelled class in this pack"
+human_caption = "witnesses at the inquiry"
+chart_scope_subject = "horizon-integrity-and-remote-access"
+charts_page = "research/forthrightness-charts.md"
+
+[[audit.topics]]
+id = "horizon-bugs"
+label = "Horizon bugs, errors & defects"
+[[audit.topics]]
+id = "remote-access"
+label = "Remote access"
+[[audit.topics]]
+id = "knowledge-and-timing"
+label = "Who knew what, when"
+[[audit.topics]]
+id = "prosecutions"
+label = "Prosecutions"
+[[audit.topics]]
+id = "disclosure"
+label = "Disclosure & expert evidence"
+[[audit.topics]]
+id = "contract-and-liability"
+label = "Contract & liability for shortfalls"
+[[audit.topics]]
+id = "investigation-and-audit"
+label = "Investigation & audit"
+[[audit.topics]]
+id = "mediation-and-redress"
+label = "Mediation & redress"
+[[audit.topics]]
+id = "governance-and-government"
+label = "Governance & government"
+[[audit.topics]]
+id = "legal-strategy"
+label = "Legal strategy"
+[[audit.topics]]
+id = "communications-and-press"
+label = "Communications & press"
+[[audit.topics]]
+id = "own-role"
+label = "Own role"
+[[audit.topics]]
+id = "how-they-know"
+label = "How they know"
+[[audit.topics]]
+id = "human-impact"
+label = "Human impact"
+[[audit.topics]]
+id = "other"
+label = "Other"
+
+[objects]
+# the object register keeps the core form; this pack names no reference object (a candidate, not adopted: ARQ data, Hamilton at [15] to [18])
+watch_heading = "## Object watch"
+watch_name = "object watch"
+criteria_column = "<reference object> criteria met"
+vocabulary_line = "Object vocabulary"
+vocabulary = []
+
+[actors]
+# the actor and polity register (core form, in the vocabulary of national security studies)
+vocabulary = "packs/pilot/registers/actor-polity-vocabulary.md"
+seed = "packs/pilot/registers/order-of-battle-seed.md"
+register = "research/actor-polity-register.md"
+referent = "the subpostmasters (their liberty, livelihoods and good names) and the integrity of the branch accounts and prosecutions built on Horizon data"
+referent_source = "sources/pilot/canon/hamilton-v-post-office/ at [1]; sources/pilot/web/2021-06-01-terms-of-reference-post-office-horizon-it-inquiry/ paragraph B"
+actors = ["Post Office Limited", "Fujitsu", "ICL Pathway", "the SSC", "Second Sight", "the JFSA", "the NFSP", "Cartwright King", "Womble Bond Dickinson", "Freeths", "the Shareholder Executive", "the CCRC", "the CPS", "the inquiry", "Project Sparrow", "the X Working Group"]
+polities = ["P1 the state", "P2 the Post Office coalition", "P3 Fujitsu", "P4 the subpostmasters' movement", "P5 the NFSP", "P6 the press and campaigners", "P7 the investigators"]
+polity_name = ""
+polity_key = "polity_statements"
+rows_key = "actor_rows"
+findings_heading = "Actors and polities"
+
+[speakers]
+# a claimant beside the two officers (owner, 2026-10-22): the method tracks a witness's consistency across his appearances as readily as an executive's
+[[speakers.ledgered]]
+name = "Alan Bates"
+page = "research/bates-perspective-ledger.md"
+report_keys = ["bates_ledger_section"]
+[[speakers.ledgered]]
+name = "Paula Vennells"
+page = "research/vennells-perspective-ledger.md"
+report_keys = ["vennells_ledger_section"]
+[[speakers.ledgered]]
+name = "Gareth Jenkins"
+page = "research/jenkins-perspective-ledger.md"
+report_keys = ["jenkins_ledger_section"]
+
+[lenses]
+catalogue = "tools/technique-catalogue.json"
+[[lenses.instance]]
+id = "sfo-cooperation"
+title = "The SFO lens (a lens from a text)"
+file = "packs/pilot/lenses/sfo-cooperation.json"
+source = "sources/pilot/web/2025-04-24-sfo-cooperation-guidance/text.md"
+source_kind = "text"
+techniques = 15
+mapped_criteria = ["C1", "C3", "C6", "C8", "C10", "C22"]
+placements = 0
+
+[canon]
+texts = "packs/pilot/canon/texts.md"
+sources_dir = "sources/pilot/canon"
+fetch_manifest = "packs/pilot/canon/fetch-manifest.toml"
+ships_text = false
+licence_route = "the recipient re-holds each judgment from the inquiry's site under its terms; example notes quote short passages with attribution (owner, 2026-10-22)"
+unit = "the numbered paragraph; cited '<neutral citation> at [n]' with the hold line"
+schemes = ["packs/pilot/canon/schemes/bates-no6-horizon-issues.json", "packs/pilot/canon/schemes/bates-no3-common-issues.json", "packs/pilot/canon/schemes/hamilton-v-post-office.json"]
+holds = ["sources/pilot/canon/bates-no6-horizon-issues", "sources/pilot/canon/bates-no3-common-issues", "sources/pilot/canon/hamilton-v-post-office"]
+reading_method_plugins = []
+unit_plugins = ["packs/pilot/canon/paragraphs.py"]
+
+[codebook]
+dir = "packs/pilot/codebook"
+instances = ["packs/pilot/codebook/argot.md"]
+decoder = ""
+rule = "a decode is a lead naming its code, never a finding, until a second channel or a dated key corroborates it"
+leads = ["L1: the Common Issues judgment's 'X Working Group' is Project Sparrow"]
+
+[circles]
+file = "packs/pilot/seeds/circles.md"
+adverse_rule = "on"
+adverse_routes = ["declared at intake (source kind adverse)", "named in advance per circle (packs/pilot/seeds/circles.md), proposed for confirmation", "detected by position from the scan, never applied without confirmation"]
+adverse_examples = ["POL's Reply to Second Sight's Briefing Report Part Two (POL00004432, 2015)", "POL's 2009 statement to Computer Weekly", "the Clarke advice on POL's expert (POL00006357, 2013)", "Fujitsu's 2024 statements that POL was aware of remote access"]
+
+[catalysts]
+page = "packs/pilot/seeds/catalysts.md"
+count = 20
+threshold_date = "2009-05-11"
+threshold_name = "Computer Weekly, 'Bankruptcy, prosecution and disrupted livelihoods - Postmasters tell their story'"
+held_label = "pre-2009 held"
+register = "research/first-utterance-register.md"
+report = "research/first-utterance.md"
+
+[source_kinds]
+kinds = ["compiler", "host", "witness", "document", "adverse", "earliest-telling"]
+default = "document"
+policy_date = "2026-10-22"
+compilers = []
+[source_kinds.stem_patterns]
+compiler_prefix = []
+compiler_contains = []
+compiler_suffix = []
+document_prefix = ["doc-pol", "doc-fuj", "doc-ukgi", "doc-witn", "doc-rlit", "canon-"]
+host_prefix = []
+host_contains = []
+witness_prefix = ["hearing-"]
+text_document_prefix = ["guidance-", "terms-of-reference"]
+
+[eras]
+# boundaries from the held sources: Horizon piloted 1999 and rolled out 2000 (Hamilton at [9]); Computer Weekly 2009 and Horizon
+# Online 2010 (Hamilton at [10], [23]); Second Sight 2012 to 2015 and the CCRC from 2015 (at [26], [27]); the group litigation to the
+# 2019 judgments (at [29], [30]); the inquiry from 2020 (terms of reference); the 2024 hearings and the press of January 2024
+pages_prefix = "research/timeline-consolidated-"
+synchrony_prefix = "research/narrative-synchrony-"
+narrative_from = 1999
+narrative_quarter_from = 2019
+[[eras.era]]
+id = "pre-2000"
+from = 1990
+to = 1999
+map_label = "before 2000"
+[[eras.era]]
+id = "2000-2009"
+from = 2000
+to = 2009
+map_label = "2000 to 2009 (Legacy Horizon)"
+[[eras.era]]
+id = "2010-2014"
+from = 2010
+to = 2014
+map_label = "2010 to 2014 (Horizon Online, Second Sight, the scheme)"
+[[eras.era]]
+id = "2015-2019"
+from = 2015
+to = 2019
+map_label = "2015 to 2019 (the CCRC, the group litigation)"
+[[eras.era]]
+id = "2020-2023"
+from = 2020
+to = 2023
+map_label = "2020 to 2023 (the inquiry, Hamilton)"
+[[eras.era]]
+id = "2024-onward"
+from = 2024
+to = 2100
+synchrony_to = 2100
+map_label = "2024 onward"
+
+[narratives]
+seeds = "packs/pilot/seeds/narratives.md"
+theses = "packs/pilot/seeds/theses.json"
+register = "research/narrative-register.md"
+pages = 0
+mainlines = ["managed-knowledge"]
+rivals = ["good-faith-reliance"]
+forks = []
+synthesis = []
+
+[vocabulary]
+keywords_dir = "packs/pilot/keywords"
+stock_phrases = "tools/stock_phrases.txt"
+stock_phrases_domain = "packs/pilot/keywords/stock-phrases-domain.txt"
+id_patterns = "packs/pilot/keywords/id-patterns.tsv"
+name_aliases = ""
+
+[code]
+# pack code: the canon layer's unit-marking plugin (finding 11 of wip/platform-phase6b/adapter-findings.md)
+pack_tools = ["packs/pilot/canon/paragraphs.py"]
+pack_docs = ["packs/pilot/canon/texts.md"]
+reads_pack = []
+
+[briefs]
+templates = "plugin/templates/briefs"
+slots = "packs/pilot/briefs/slots.toml"
+runs = "packs/pilot/briefs/runs"
+index = "packs/pilot/briefs/README.md"
+
+[display]
+phase = 5
+
+[display.index]
+title = "Horizon Ledger (pilot)"
+intro = "The Post Office Horizon IT Inquiry, with every telling's provenance: hearing days, exhibits, judgments, press and public comment, each held as obtained and read into notes with claims, forthrightness audits, dated timelines and cross-checks."
+note_noun = ["hearing day", "hearing days"]
+book_noun = ["document", "documents"]
+notes_heading = "Hearing days"
+books_heading = "Documents, judgments and press"
+
+[display.viewer]
+title = "Horizon Ledger Narratives (pilot)"
+
+[display.viewer.lanes]
+A = "The Horizon system"
+B = "Prosecutions and recovery"
+C = "Disclosure and expert evidence"
+D = "The critics and the scheme"
+E = "Money and contracts"
+F = "Government and Parliament"
+G = "The courts and the inquiry"
+H = "Organisations"
+
+[display.candour]
+term = "Forthrightness"
+term_lower = "forthrightness"
+file_prefix = "forthrightness"
+page_title = "Per-hearing forthrightness charts"
+heading_note = "each note's own `## Forthrightness audit` section"
+set_name = "the audited set (Horizon integrity; prosecutions and disclosure)"
+
+[display.map]
+source_groups = ["Hearings", "Exhibits", "Judgments", "News", "Public comment", "Guidance"]
+
+[display.map.subjects]
+horizon-integrity-and-remote-access = { name = "Horizon integrity and remote access" }
+prosecutions-and-disclosure = { name = "Prosecutions and disclosure" }
+critics-redress-and-litigation = { name = "Critics, redress and litigation" }
+governance-and-government = { name = "Governance and government" }
+human-impact = { name = "Human impact" }
+
+[display.status]
+title = "Status of the Horizon Ledger (pilot)"
+
+# the intake (2026-10-25): the sample reading's threshold, the count of faults of meaning in the twenty sampled rows that sends a
+# note to the check phase before it integrates (tools/ledger/sample.py; the briefs' slot pack.sample_threshold; core default 3)
+[intake]
+sample_threshold = 3

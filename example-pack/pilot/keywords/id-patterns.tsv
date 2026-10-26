@@ -1,0 +1,5 @@
+# Document identifier forms of this corpus for tools/context_pack.py (label TAB order TAB regex; the order places a pattern among the core's generic ones).
+# The inquiry's URNs: a prefix naming the producing party or the inquiry, then 7 or 8 digits (POL00028838, INQ00001126, RLIT0000005).
+inquiry URN	15	\b((?:POL|FUJ|UKGI|WITN|INQ|RLIT|JARB|COPF|BEIS|SUBS|PVEN|WBON|AMCL)\d{7,8})\b
+Peak reference	25	\b(PC\d{7})\b
+neutral citation	35	(\[\d{4}\] EW(?:HC|CA) (?:Crim |Civ )?\d{1,4}(?: \(QB\))?)

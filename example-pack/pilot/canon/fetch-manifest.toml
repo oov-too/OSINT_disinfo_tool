@@ -1,0 +1,58 @@
+# packs/pilot/canon/fetch-manifest.toml: how a recipient re-holds the pilot's canon (owner's licence route, 2026-10-22).
+# The judgment text does not ship with the pack. Each recipient fetches every judgment from the Post Office Horizon IT Inquiry's site under
+# its terms (Crown copyright; the site's Open Government Licence notice), holds it through tools/ledger/acquire/, and checks the bytes
+# against the SHA-256 below (the copy held on 2026-10-22). The attachment's download link carries a token: resolve it from the evidence page
+# at fetch time, never from this file. Example notes quote the judgments only in short passages, each with the neutral citation and paragraph.
+
+[manifest]
+version = "1"
+held = "2026-10-22"
+site_terms = "https://www.postofficehorizoninquiry.org.uk/terms-and-conditions"
+gap_seconds = 10
+steps = ["fetch the evidence page", "read the PDF attachment link from it (/file/N/download?token=...)", "fetch the PDF through the web adapter's gate", "check bytes and sha256", "derive the text layer (document.text_layer, per_page_form)", "mark paragraphs with packs/pilot/canon/paragraphs.py and hold with tools/ledger/acquire/canon.py under the scheme file"]
+driver = "`ledger acquire batch <list.toml> fetch` (tools/ledger/batch.py): one document item per text below, its url read from the evidence_page at fetch time; then, per text, the text layer, `python3 -I packs/pilot/canon/paragraphs.py <text layer> <marked> <report.json>` and `python3 tools/ledger/acquire/canon.py hold <marked> --id <id> --scheme <scheme>`, the bytes checked against sha256"
+
+[[text]]
+id = "bates-no6-horizon-issues"
+title = "Bates and others v Post Office Ltd (No 6) \"Horizon Issues\" (Rev 1) [2019] EWHC 3408 (QB)"
+citation = "[2019] EWHC 3408 (QB)"
+date = "2019-12-16"
+exhibit = "RLIT0000005"
+evidence_page = "https://www.postofficehorizoninquiry.org.uk/evidence/rlit0000005-bates-ors-v-post-office-ltd-no-6-horizon-issues-rev-1-2019-ewhc-3408-qb-16"
+file = "RLIT0000005.pdf"
+bytes = 115797787
+sha256 = "d50a37dfd1687d2f108f5657f9992146fa3e39cd893f2bfc218c5fc5707319f8"
+scheme = "packs/pilot/canon/schemes/bates-no6-horizon-issues.json"
+units_expected = 1027
+paragraph_numbers_missing = [11, 793, 1003]
+hold = "sources/pilot/canon/bates-no6-horizon-issues"
+
+[[text]]
+id = "bates-no3-common-issues"
+title = "Bates and others v Post Office Ltd (No 3) \"Common Issues\" [2019] EWHC 606 (QB)"
+citation = "[2019] EWHC 606 (QB)"
+date = "2019-03-15"
+exhibit = "POL00022936"
+evidence_page = "https://www.postofficehorizoninquiry.org.uk/evidence/pol00022936-alan-bates-and-others-v-post-office-limited-judgment-no3-common-issues"
+file = "POL00022936.pdf"
+bytes = 112282175
+sha256 = "c9c07c909f92dda0610a156129737e3773b60d0f1d65e39269da50455f996eb7"
+scheme = "packs/pilot/canon/schemes/bates-no3-common-issues.json"
+units_expected = 1110
+paragraph_numbers_missing = [3, 5, 8, 215, 416, 518, 918, 1027, 1028, 1040, 1053, 1062]
+hold = "sources/pilot/canon/bates-no3-common-issues"
+
+[[text]]
+id = "hamilton-v-post-office"
+title = "Hamilton and others v Post Office Ltd [2021] EWCA Crim 577"
+citation = "[2021] EWCA Crim 577"
+date = "2021-04-23"
+exhibit = "POL00113278"
+evidence_page = "https://www.postofficehorizoninquiry.org.uk/evidence/pol00113278-approved-judgment-between-josephine-hamilton-others-and-post-office-limited"
+file = "POL00113278.pdf"
+bytes = 32013314
+sha256 = "0d84b712958bf300175600c129797685b333378cde62a4bded2a00ddcbb439d0"
+scheme = "packs/pilot/canon/schemes/hamilton-v-post-office.json"
+units_expected = 444
+paragraph_numbers_missing = [3, 7, 8]
+hold = "sources/pilot/canon/hamilton-v-post-office"

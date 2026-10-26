@@ -1,0 +1,21 @@
+# The ledger package (tools/platform-plan.md, phase 2, 2026-10-22): the parser library, the project paths and the `ledger` command.
+# Build a wheel later with `python3 -m pip wheel tools/ledger --no-deps -w <dir>` (phase 7 bundles it with its dependency wheels).
+# The command finds the project folder by $LEDGER_ROOT or the nearest ledger.toml above the working directory, and runs the
+# project's own tools/ from there; the tools are not part of the wheel in this phase.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ledger"
+version = "0.2.0"
+description = "The ledger's core: the parser library for house-form notes, the sources/ alias table and the ledger command"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+ledger = "ledger.cli:main"
+
+[tool.setuptools]
+package-dir = {"ledger" = "."}
+packages = ["ledger", "ledger.acquire"]

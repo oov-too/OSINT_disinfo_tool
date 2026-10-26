@@ -1,0 +1,10 @@
+# packs/pilot/briefs/runs/pilot-6b.toml: the run values of the phase 6b intakes (pack confirmed by the owner 2026-10-22; the run waits for the owner's switch of the live briefs).
+
+[run]
+label = "pilot-6b"
+date = "to be set when the run starts"
+brief = "packs/pilot/briefs/runs/pilot-6b.md"
+purpose = "the second-domain pilot of tools/platform-plan.md phase 6b: ten sources of the Post Office Horizon IT Inquiry taken in under the staged workflow with the pilot pack, so that one narrative page can be built and attacked and the cost measured with tools/agent_usage.py against the four-agent table in tools/intake-staged.md"
+new_material = "the ten sources of wip/platform-phase6b/corpus.md, held in sources/pilot/"
+new_events = "none beyond packs/pilot/seeds/catalysts.md"
+flare_documents = "none"

@@ -1,0 +1,11 @@
+[pack]
+name = "casebook"
+
+[objects]
+watch_heading = "## Object watch"
+criteria_column = "Core sample criteria met"
+
+[[layout.folder]]
+alias = "sources/sets/harrowmere-2018/"
+target = "books/sources/web/harrowmere-2018/"
+why = "a document set of one intake run"

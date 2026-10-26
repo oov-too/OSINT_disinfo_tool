@@ -1,0 +1,13 @@
+# Brief addendum: adverse sources (core template, platform phase 4, 2026-10-22; tools/intake-policy.md rule 3)
+
+Template, rendered by the skill into `wip/<run>/briefs/intake-adverse.md`. From wip/adverse-1014/brief-adverse.md (2026-10-14). Read with intake-standing.md, intake-document.md and operations.md.
+
+| Slot | What it holds | Core default |
+|---|---|---|
+| `{{pack.exemplars.adverse_web}}` | the pack's exemplar note for a long-form web text | the skeleton alone (`--form adverse-web`) |
+| `{{pack.exemplars.adverse_scan}}` | the pack's exemplar notes for a scanned magazine or paper | the document form's skeleton |
+| `{{pack.circles}}` | the circles of the relations register, and the adverse sources the pack names for each | the circles the relations register names; no named adverse sources |
+
+An adverse source is intaken under the same schema (tools/schema.md v1.3, the document form of intake-document.md) and the same forthrightness audit as any other note. Adversity is a class, not a discount: the adverse teller's own claims get chain, attribution and class like anyone's; their silences and walls are audited; their interests are recorded symmetrically (a sceptic's book, platform, standing, or a forum's culture are interests too). The note's `source_kind` is `adverse`. For a web text the exemplar is {{pack.exemplars.adverse_web}} (a long-form text held locally, linked, never reproduced at length); for a scanned magazine the exemplar is {{pack.exemplars.adverse_scan}}; for a forum thread each post is a row set with the poster's handle as the speaker (class `read` unless the post states firsthand knowledge), the timestamp as the telling date, and the thread's findings (a measurement, a document located, a contradiction shown) as claims rows with the post cited (`--form adverse-forum`). The circle the source answers, and any adverse source the pack names for that circle, come from {{pack.circles}}.
+
+What an adverse note must do beyond the schema: (1) `## What this contests`: for every held row the source contradicts or undercuts, the held row cited, the adverse claim cited, the test that would separate them, and the divergence tagged (`[div: ...]`) in the timeline; an adverse telling is a lead against the witness, never a correction, exactly as an agency's is (the agency rule of tools/schema.md section 10 applies to sceptics too). (2) `## What it concedes`: what the adverse source accepts of the held story. (3) First-utterance: an adverse source is often the earliest dated telling of a counter-claim; tag `[first telling: FU-n]` and return `first_telling_rows`. (4) The register's clusters the source bears on, by ID.

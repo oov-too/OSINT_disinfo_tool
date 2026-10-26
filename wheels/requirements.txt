@@ -1,0 +1,9 @@
+# the ledger's runtime dependencies; install.py --apply installs each from wheels/deps (pip --no-index)
+pypdf    # text layers of PDFs
+pymupdf<2    # the PDF renderer for scanned pages (replaces render_pdf.swift)
+pytesseract    # the Tesseract OCR binding (Linux, Windows; macOS without Vision)
+pillow    # images for OCR (pytesseract)
+openpyxl    # Excel catalogues of the bulk-archive adapter
+requests    # HTTP for the recording transcript fetcher (tools/fetch_transcript.py, ledger.acquire.youtube)
+youtube-transcript-api    # recording transcripts (tools/fetch_transcript.py)
+matplotlib    # the charts `ledger present` draws (draw_openness_map, draw_forthrightness_chart, draw_topic_corroboration)

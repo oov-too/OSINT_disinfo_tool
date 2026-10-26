@@ -1,0 +1,6 @@
+[ledger]
+name = "casebook-fixtures"
+title = "Casebook fixtures"
+
+[pack]
+path = "packs/casebook"
