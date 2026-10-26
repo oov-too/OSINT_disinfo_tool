@@ -10,7 +10,7 @@ inside Claude Code on the group's own model route; nothing in it sends the group
 
 **Licence:** Apache License 2.0 (`LICENSE`).
 
-*The case study, with the measurements behind the design, is being written; see `HANDOVER.md` meanwhile.*
+**Case study:** [Parsing disinfo with OSINT and LLMs](CASE_STUDY.md), the methods, the product, the manual tools and the measurements behind the design.
 
 ## Start here
 
